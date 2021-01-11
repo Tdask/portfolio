@@ -1,6 +1,7 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import { navLinks } from "../../config"
 
 const Header = ({ siteTitle }) => (
   <header
@@ -11,9 +12,10 @@ const Header = ({ siteTitle }) => (
   >
     <div
       style={{
-        margin: `0 auto`,
+        margin: `5 auto`,
         maxWidth: 960,
         padding: `1.45rem 1.0875rem`,
+        display: "flex",
       }}
     >
       <h1 style={{ margin: 0 }}>
@@ -27,6 +29,9 @@ const Header = ({ siteTitle }) => (
           {siteTitle}
         </Link>
       </h1>
+      {navLinks.menu.map((item, i) => {
+        return <h1>{item.name}</h1>
+      })}
     </div>
   </header>
 )
