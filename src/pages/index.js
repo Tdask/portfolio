@@ -1,10 +1,10 @@
 import React from "react"
 import { Link } from "gatsby"
+import scrollTo from "gatsby-plugin-smoothscroll"
 import Hero from "../components/sections/hero"
 import TokenTaxSection from "../components/sections/tokenTaxSection"
 import ChromaSection from "../components/sections/chromaSection"
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
 
 const IndexPage = () => (

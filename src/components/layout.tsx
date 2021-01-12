@@ -9,7 +9,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
-
+import { color } from "./styles/color"
 import Header from "./header"
 import "./layout.css"
 
@@ -18,6 +18,7 @@ const StyledLayoutDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex: 1;
 `
 
 const Layout = ({ children }) => {

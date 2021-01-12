@@ -1,12 +1,14 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import { color } from "./styles/color"
 import { navLinks } from "../../config"
 
 const Header = ({ siteTitle }) => (
   <header
     style={{
-      background: `rebeccapurple`,
+      background:
+        "linear-gradient(90deg, hsla(155, 23%, 71%, 1) 0%, hsla(302, 17%, 32%, 1) 100%)",
       marginBottom: `1.45rem`,
     }}
   >
@@ -30,7 +32,7 @@ const Header = ({ siteTitle }) => (
         </Link>
       </h1>
       {navLinks.menu.map((item, i) => {
-        return <h1>{item.name}</h1>
+        return <h1 style={{ color: color.mango }}>{item.name}</h1>
       })}
     </div>
   </header>

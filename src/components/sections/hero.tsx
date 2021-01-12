@@ -1,10 +1,12 @@
 import React from "react"
+import scrollTo from "gatsby-plugin-smoothscroll"
 import Image from "../image"
 import SectionWrapper from "./sectionWrapper"
+import { color } from "../styles/color"
 
 const Hero = () => {
   return (
-    <SectionWrapper>
+    <SectionWrapper bgColor>
       <h1>Hello</h1>
       <p>
         My name is Logan Takahashi, I am a developer, musician, artist living in
@@ -20,8 +22,14 @@ const Hero = () => {
           alignSelf: "center",
         }}
       >
-        <Image />
+        <Image path="rooftop-polaroid.png" />
       </div>
+      <button
+        style={{ alignSelf: "center" }}
+        onClick={() => scrollTo("#chroma")}
+      >
+        V
+      </button>
     </SectionWrapper>
   )
 }
