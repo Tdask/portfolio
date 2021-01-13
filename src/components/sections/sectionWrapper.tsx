@@ -6,6 +6,6 @@ const SectionWrapper = styled.div`
   align-items: center;
   text-align: center;
   background: ${props => props.bgColor || null};
-  padding: 5rem;
+  padding: 3rem;
 `
 export default SectionWrapper

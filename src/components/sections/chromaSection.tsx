@@ -1,6 +1,5 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import scrollTo from "gatsby-plugin-smoothscroll"
 // import styled from "styled-components"
 import SectionWrapper from "./sectionWrapper"
 import Img from "gatsby-image"
@@ -27,10 +26,15 @@ const ChromaSection = () => {
       id="chroma"
       bgColor="linear-gradient(90deg, hsla(0, 0%, 5%, 1) 0%, hsla(126, 82%, 33%, 1) 100%)"
     >
-      <div style={{ display: "flex", flexDirection: "row" }}>
-        <div style={{ width: 500 }}>
-          {/* <Img fluid={data.threePhoneImage.childImageSharp.fluid} /> */}
-        </div>
+      <div
+        style={{
+          display: "flex",
+          flex: 1,
+          flexDirection: "row",
+          // background: "red",
+          // minHeight: 297,
+        }}
+      >
         <div style={{ display: "flex", flexDirection: "column" }}>
           <h1 style={{ alignSelf: "flex-end", color: color.silver }}>
             Chroma Signet App
@@ -42,9 +46,6 @@ const ChromaSection = () => {
         </div>
       </div>
       <GifPlayer gifSrc={gifSrc} stillSrc={stillSrc} />
-      <button style={{}} onClick={() => scrollTo("#tokenTax")}>
-        V
-      </button>
     </SectionWrapper>
   )
 }

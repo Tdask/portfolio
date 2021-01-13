@@ -4,10 +4,10 @@ module.exports = {
   siteDescription: "A portfolio of my dev work, and past work",
   navLinks: {
     menu: [
-      { name: "About", url: "/about" },
-      { name: "Portfolio", url: "/portfolio" },
-      { name: "Projects", url: "/projects" },
-      { name: "Contact", url: "/contact" },
+      { name: "about", url: "/about" },
+      // { name: "Portfolio", url: "/portfolio" },
+      // { name: "Projects", url: "/projects" },
+      { name: "contact", url: "/contact" },
     ],
   },
 }

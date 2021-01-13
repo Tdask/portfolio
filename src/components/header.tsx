@@ -15,9 +15,11 @@ const Header = ({ siteTitle }) => (
     <div
       style={{
         margin: `5 auto`,
-        maxWidth: 960,
+        // maxWidth: 960,
         padding: `1.45rem 1.0875rem`,
         display: "flex",
+        flex: 1,
+        justifyContent: "space-between",
       }}
     >
       <h1 style={{ margin: 0 }}>
@@ -31,9 +33,23 @@ const Header = ({ siteTitle }) => (
           {siteTitle}
         </Link>
       </h1>
-      {navLinks.menu.map((item, i) => {
-        return <h1 style={{ color: color.mango }}>{item.name}</h1>
-      })}
+      <div style={{ display: "flex", justifyContent: "space-around", flex: 1 }}>
+        {navLinks.menu.map((item, i) => {
+          return (
+            <h1
+              key={item.name}
+              style={{ color: color.mango, textDecoration: `none` }}
+            >
+              <Link
+                to={`/${item.name}`}
+                style={{ textDecoration: "none", color: color.mango }}
+              >
+                {item.name}
+              </Link>
+            </h1>
+          )
+        })}
+      </div>
     </div>
   </header>
 )
