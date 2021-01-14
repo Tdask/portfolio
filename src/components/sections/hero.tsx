@@ -1,20 +1,40 @@
-import React from "react"
+import React, { useRef } from "react"
+import styled from "styled-components"
+import { useSpring, animated, useChain } from "react-spring"
 import Image from "../image"
-import SectionWrapper from "./sectionWrapper"
+import SectionWrapper, { HeroSectionWrapper } from "./sectionWrapper"
 import Scroll from "../scroll"
 import { color } from "../styles/color"
 
+const useFadeIn = ref => {
+  const spring = useSpring({
+    from: {
+      opacity: 0,
+    },
+    to: {
+      opacity: 1,
+    },
+    ref,
+  })
+  return spring
+}
+
 const Hero = () => {
+  const titleRef = useRef()
+  const textRef = useRef()
+  const arrowRef = useRef()
+  const titleStyle = useFadeIn(titleRef)
+  const textStyle = useFadeIn(textRef)
+  const arrowStyle = useFadeIn(arrowRef)
+  useChain([titleRef, textRef, arrowRef])
   return (
     <>
-      <SectionWrapper bgColor="tan">
-        <h1>Hello</h1>
-        <p>
-          My name is Logan Takahashi, I am a developer, musician, artist living
-          in NYC. I have previous background of music and art. Here are some
-          personal projects I have made using code. And here is my portfolio of
-          professional front-end work.
-        </p>
+      <HeroSectionWrapper>
+        <animated.h1 style={titleStyle}>Hello</animated.h1>
+        <animated.h1 style={textStyle}>
+          My name is Logan Takahashi, I am a developer and musician living in
+          NYC. Here is some of my recent work.
+        </animated.h1>
         <div
           style={{
             width: `300px`,
@@ -23,11 +43,13 @@ const Hero = () => {
             alignSelf: "center",
           }}
         >
-          <Image path="rooftop-polaroid.png" />
+          {/* <Image path="rooftop-polaroid.png" /> */}
         </div>
-      </SectionWrapper>
+      </HeroSectionWrapper>
       <SectionWrapper>
-        <Scroll id="chroma" />
+        <animated.div style={arrowStyle}>
+          <Scroll id="chroma" />
+        </animated.div>
       </SectionWrapper>
     </>
   )

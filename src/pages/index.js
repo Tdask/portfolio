@@ -7,6 +7,7 @@ import ChromaSection from "../components/sections/chromaSection"
 import Layout from "../components/layout"
 import Scroll from "../components/scroll"
 import SEO from "../components/seo"
+import MelodySection from "../components/sections/melodyMakerSection"
 
 const IndexPage = () => (
   <Layout>
@@ -14,6 +15,7 @@ const IndexPage = () => (
     <Hero />
     <ChromaSection />
     <TokenTaxSection />
+    <MelodySection />
   </Layout>
 )
 

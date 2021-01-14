@@ -8,8 +8,8 @@ const gifSrc: GifPlayerProps["gifSrc"] = require("../../images/gifs/TTcapture.gi
 
 const TokenTaxSection = () => {
   return (
-    <SectionWrapper id="tokenTax" bgColor="aqua">
-      <div style={{ flexDirection: "column" }}>
+    <SectionWrapper direction="row" id="tokenTax" background="khaki">
+      <div style={{ flexDirection: "column", maxWidth: 300 }}>
         <h1 style={{ alignSelf: "flex-start" }}>Token Tax</h1>
         <p style={{ textAlign: "left" }}>
           I built out blog pages on marketing site, as well as internal tooling
