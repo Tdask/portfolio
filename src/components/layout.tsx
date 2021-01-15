@@ -12,6 +12,7 @@ import styled from "styled-components"
 import { color } from "./styles/color"
 import Header from "./header"
 import "./layout.css"
+// import "./assets/css/fonts.css"
 
 const StyledLayoutDiv = styled.div`
   padding: 1rem 1.0875rem 1.45rem;
@@ -19,6 +20,7 @@ const StyledLayoutDiv = styled.div`
   flex-direction: column;
   align-items: center;
   flex: 1;
+  overflow: hidden;
 `
 
 const Layout = ({ children }) => {

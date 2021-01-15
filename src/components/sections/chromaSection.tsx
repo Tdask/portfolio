@@ -1,6 +1,8 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-// import styled from "styled-components"
+import { useStaticQuery, graphql, Link } from "gatsby"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
+import styled from "styled-components"
 import SectionWrapper, { SectionWrapperProps } from "./sectionWrapper"
 import Img from "gatsby-image"
 import GifPlayer, { GifPlayerProps } from "../gifPlayer"
@@ -21,6 +23,10 @@ const ChromaSection = () => {
   //   }
   // `)
 
+  const StyledArrow = styled.div`
+    hov
+  `
+
   return (
     <SectionWrapper
       direction="row-reverse"
@@ -36,6 +42,19 @@ const ChromaSection = () => {
           I worked on building and releasing an app from scratch with a small
           team of 5 using React Native
         </p>
+        <Link
+          to="/projects/chroma"
+          style={{
+            textDecoration: `none`,
+            alignSelf: "flex-end",
+          }}
+        >
+          more&nbsp;
+          <FontAwesomeIcon
+            icon={faArrowRight}
+            // style={{ cursor: "pointer", alignSelf: "flex-end" }}
+          />
+        </Link>
       </div>
       <GifPlayer gifSrc={gifSrc} stillSrc={stillSrc} />
     </SectionWrapper>

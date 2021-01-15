@@ -7,22 +7,22 @@ import { navLinks } from "../../config"
 const Header = ({ siteTitle }) => (
   <header
     style={{
-      background:
-        "linear-gradient(90deg, hsla(155, 23%, 71%, 1) 0%, hsla(302, 17%, 32%, 1) 100%)",
-      marginBottom: `1.45rem`,
+      background: color.gradient2,
+      // marginBottom: `1.45rem`,
     }}
   >
     <div
       style={{
-        margin: `5 auto`,
+        // margin: `5 auto`,
         // maxWidth: 960,
         padding: `1.45rem 1.0875rem`,
         display: "flex",
         flex: 1,
         justifyContent: "space-between",
+        alignItems: "center",
       }}
     >
-      <h1 style={{ margin: 0 }}>
+      <h2 style={{ margin: 0, flex: 4 }}>
         <Link
           to="/"
           style={{
@@ -32,8 +32,15 @@ const Header = ({ siteTitle }) => (
         >
           {siteTitle}
         </Link>
-      </h1>
-      <div style={{ display: "flex", justifyContent: "space-around", flex: 1 }}>
+      </h2>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-around",
+          flex: 1,
+          // background: "green",
+        }}
+      >
         {navLinks.menu.map((item, i) => {
           return (
             <h1
@@ -42,7 +49,11 @@ const Header = ({ siteTitle }) => (
             >
               <Link
                 to={`/${item.name}`}
-                style={{ textDecoration: "none", color: color.mango }}
+                style={{
+                  textDecoration: "none",
+                  color: color.eggShell,
+                  marginLeft: 10,
+                }}
               >
                 {item.name}
               </Link>

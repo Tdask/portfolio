@@ -10,7 +10,7 @@ type ScrollProps = {
 const Scroll = ({ id }: ScrollProps) => {
   return (
     <FontAwesomeIcon
-      size="5x"
+      size="3x"
       style={{ cursor: "pointer" }}
       icon={faChevronDown}
       onClick={() => scrollTo(`#${id}`)}

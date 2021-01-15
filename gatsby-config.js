@@ -20,6 +20,12 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-smoothscroll`,
     {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [`oswald`],
+      },
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `gatsby-starter-default`,

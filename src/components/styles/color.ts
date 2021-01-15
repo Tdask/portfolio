@@ -6,7 +6,12 @@ export const  color = {
   midnight: '#140d4fff',
   gradient1: 'linear-gradient(0deg, #1060808, #fcbd03ff, #b5b0b8ff, #ffffffff, #140d4fff)',
   gradient2: 'linear-gradient(90deg, hsla(265, 53%, 29%, 1) 0%, hsla(24, 93%, 73%, 1) 100%)',
-  xiketic: '#1c0b19ff'
+  xiketic: '#1c0b19ff',
+  eggShell: '#f3e5c2',
+  eerieBlack: '#181a19',
+  razz: '#ea3373',
+  orangeCrayon: '#EB7533',
+  turquoise: '#11D0BA'
 }
 
 // /* CSS HEX */
