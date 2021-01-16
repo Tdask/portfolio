@@ -7,6 +7,7 @@ import SectionWrapper, { SectionWrapperProps } from "./sectionWrapper"
 import Img from "gatsby-image"
 import GifPlayer, { GifPlayerProps } from "../gifPlayer"
 import { color } from "../styles"
+import { ChromaIcon } from "../../components/logo"
 const stillSrc: GifPlayerProps["stillSrc"] = require("../../images/chromaStill.png")
 const gifSrc: GifPlayerProps["gifSrc"] = require("../../images/gifs/chromaCapture.gif")
 
@@ -35,6 +36,7 @@ const ChromaSection = () => {
       background={color.silver}
     >
       <div style={{ display: "flex", flexDirection: "column", maxWidth: 300 }}>
+        {/* <ChromaIcon /> */}
         <h1 style={{ alignSelf: "flex-end", color: color.midnight }}>
           Chroma Signet App
         </h1>

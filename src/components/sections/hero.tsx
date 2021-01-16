@@ -76,7 +76,7 @@ const Hero = () => {
   const arrowRef = useRef()
   const nameRef = useRef()
 
-  const nameStyle = useColorChange(nameRef, color.orangeCrayon)
+  const nameStyle = useColorChange(nameRef, color.turquoise)
 
   const titleStyle = useFadeIn(titleRef)
   const textStyle = useSlideInFromLeft(textRef)

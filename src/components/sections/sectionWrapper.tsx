@@ -8,7 +8,7 @@ export type SectionWrapperProps = {
 const SectionWrapper = styled.div`
   display: flex;
   width: 100vw;
-  flex-direction: ${props => props.direction || `column`};
+  flex-direction: ${props => props.direction || `row`};
   align-items: ${props => props.align || `center`};
   justify-content: ${props => props.justifyContent || `space-around`};
   text-align: ${props => props.textAlign || `center`};

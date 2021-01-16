@@ -1,21 +1,25 @@
+import React from "react"
+import styled from "styled-components"
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
-import React from "react"
 import { color } from "./styles/color"
 import { navLinks } from "../../config"
 
+const StyledHeader = styled.header`
+  background: linear-gradient(
+    90deg,
+    hsla(186, 33%, 94%, 1) 0%,
+    hsla(216, 41%, 79%, 1) 100%
+  );
+`
+
 const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: color.gradient2,
-      // marginBottom: `1.45rem`,
-    }}
-  >
+  <StyledHeader>
     <div
       style={{
         // margin: `5 auto`,
         // maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
+        padding: `1.45rem 3.0875rem`,
         display: "flex",
         flex: 1,
         justifyContent: "space-between",
@@ -62,7 +66,7 @@ const Header = ({ siteTitle }) => (
         })}
       </div>
     </div>
-  </header>
+  </StyledHeader>
 )
 
 Header.propTypes = {

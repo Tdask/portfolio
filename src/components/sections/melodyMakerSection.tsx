@@ -1,7 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import Section, { SectionProps } from "./section"
 import Img from "gatsby-image"
+import Section, { SectionProps } from "./section"
 import Iframe from "react-iframe"
 
 const melodyData: SectionProps = {
