@@ -24,21 +24,21 @@ const ChromaSection = () => {
   //   }
   // `)
 
-  const StyledArrow = styled.div`
-    hov
-  `
+  // const StyledArrow = styled.div`
+  //   hov
+  // `
 
   return (
     <SectionWrapper
       direction="row-reverse"
       id="chroma"
       justifyContent="space-around"
-      background={color.silver}
+      background={color.eggShell}
     >
       <div style={{ display: "flex", flexDirection: "column", maxWidth: 300 }}>
         {/* <ChromaIcon /> */}
         <h1 style={{ alignSelf: "flex-end", color: color.midnight }}>
-          Chroma Signet App
+          Chroma Signet
         </h1>
         <p style={{ textAlign: "end" }}>
           I worked on building and releasing an app from scratch with a small

@@ -58,7 +58,25 @@ const IndexPage = () => (
       )}
     </VisibilitySensor>
 
-    <MelodySection />
+    <VisibilitySensor partialVisibility once>
+      {({ isVisible }) => (
+        <Spring
+          delay={200}
+          to={{
+            opacity: isVisible ? 1 : 0,
+            // transform: isVisible ? "translateX(0)" : "translateX(200px)",
+          }}
+        >
+          {({ opacity, transform }) => {
+            return (
+              <div style={{ opacity, transform }}>
+                <MelodySection />
+              </div>
+            )
+          }}
+        </Spring>
+      )}
+    </VisibilitySensor>
   </Layout>
 )
 

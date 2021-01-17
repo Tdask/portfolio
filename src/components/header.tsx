@@ -5,6 +5,10 @@ import PropTypes from "prop-types"
 import { color } from "./styles/color"
 import { navLinks } from "../../config"
 
+const activeStyle = {
+  color: color.silver,
+}
+
 const StyledHeader = styled.header`
   background: linear-gradient(
     90deg,
@@ -19,7 +23,7 @@ const Header = ({ siteTitle }) => (
       style={{
         // margin: `5 auto`,
         // maxWidth: 960,
-        padding: `1.45rem 3.0875rem`,
+        padding: `1rem 3.0875rem`,
         display: "flex",
         flex: 1,
         justifyContent: "space-between",
@@ -33,6 +37,7 @@ const Header = ({ siteTitle }) => (
             color: `white`,
             textDecoration: `none`,
           }}
+          activeStyle={activeStyle}
         >
           {siteTitle}
         </Link>
@@ -49,7 +54,11 @@ const Header = ({ siteTitle }) => (
           return (
             <h1
               key={item.name}
-              style={{ color: color.mango, textDecoration: `none` }}
+              style={{
+                color: color.mango,
+                textDecoration: `none`,
+                marginBottom: 0,
+              }}
             >
               <Link
                 to={`/${item.name}`}
@@ -58,6 +67,7 @@ const Header = ({ siteTitle }) => (
                   color: color.eggShell,
                   marginLeft: 10,
                 }}
+                activeStyle={activeStyle}
               >
                 {item.name}
               </Link>

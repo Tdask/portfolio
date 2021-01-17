@@ -14,7 +14,7 @@ const TokenTaxSection = () => {
       textAlign="left"
       direction="row"
       id="tokenTax"
-      background="khaki"
+      background="gray"
     >
       <div style={{ flexDirection: "column", maxWidth: 300 }}>
         <h1 style={{ alignSelf: "flex-start" }}>Token Tax</h1>

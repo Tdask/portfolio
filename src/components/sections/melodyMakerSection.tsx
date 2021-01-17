@@ -2,6 +2,7 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import Section, { SectionProps } from "./section"
+import SectionWrapper from "./sectionWrapper"
 import Iframe from "react-iframe"
 
 const melodyData: SectionProps = {
@@ -28,26 +29,23 @@ const MelodySection = () => {
     return <div>Picture not found</div>
   }
   return (
-    <Section
-      {...melodyData}
-      // background="#b5b0b8ff"
-      // alignItems="flex-start"
-      reverse
-    >
-      {/* <div style={{ flex: 1, background: "pink" }} /> */}
-      <Img
-        style={{ flex: 1 }}
-        fluid={data.melodyMakerImage.childImageSharp.fluid}
-      />
-      {/* <Iframe
-        onLoad={() => console.log("loaded!")}
-        url="https://melodymaker.herokuapp.com/"
-        width="500px"
-        height="860px"
-        id="melodyMaker"
-        styles={{ transform: "scale(0.5)", overflow: "hidden" }}
-      /> */}
-    </Section>
+    <SectionWrapper id="neuralMelody" direction="column">
+      <h1>Neural Melody Maker (spring 2019)</h1>
+      <div
+        style={{ display: "flex", flexDirection: "row", marginTop: "1.45rem" }}
+      >
+        <Img
+          style={{ flex: 1.2 }}
+          fluid={data.melodyMakerImage.childImageSharp.fluid}
+        />
+        <div style={{ flex: 2 }}>
+          <p>
+            Generate and build upon melodies using a recurrent neural network.
+            Uses google's Magenta.js api as well as web audio.
+          </p>
+        </div>
+      </div>
+    </SectionWrapper>
   )
 }
 

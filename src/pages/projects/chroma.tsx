@@ -2,6 +2,7 @@ import React from "react"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 import SectionWrapper from "../../components/sections/sectionWrapper"
+import SlideViewer from "../../components/slideViewer"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
@@ -31,14 +32,15 @@ const ChromaProjectPage = () => {
   return (
     <Layout>
       <SectionWrapper>
-        {data?.threePhones?.childImageSharp?.fluid ? (
+        {/* {data?.threePhones?.childImageSharp?.fluid ? (
           <Img
             style={{ flex: 1 }}
             fluid={data.threePhones.childImageSharp.fluid}
           />
         ) : (
           <p>no pic</p>
-        )}
+        )} */}
+        <SlideViewer style={{ flex: 1 }} />
         <div style={{ display: "block", flex: 1 }}>
           <p>2020</p>
           <p>
