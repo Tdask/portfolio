@@ -40,9 +40,9 @@ const ChromaProjectPage = () => {
         ) : (
           <p>no pic</p>
         )} */}
-        <div style={{ display: "flex", flex: 1, position: "relative" }}>
-          <SlideViewer style={{ flex: 1 }} />
-        </div>
+        <SlideViewer
+        // style={{ flex: 1 }}
+        />
         <div style={{ display: "block", flex: 1, alignSelf: "flex-start" }}>
           <p>2020</p>
           <p>
@@ -70,12 +70,14 @@ const ChromaProjectPage = () => {
           </p>
         </div>
       </SectionWrapper>
-      <h2>Technologies used:</h2>
-      <ul>
-        {technologies.map(item => (
-          <li key={item}>{item} </li>
-        ))}
-      </ul>
+      <SectionWrapper direction="row">
+        <h2>Technologies used:</h2>
+        <ul>
+          {technologies.map(item => (
+            <li key={item}>{item} </li>
+          ))}
+        </ul>
+      </SectionWrapper>
     </Layout>
   )
 }
