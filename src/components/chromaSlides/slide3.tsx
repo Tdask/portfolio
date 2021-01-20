@@ -17,9 +17,7 @@ const Slide3 = () => {
   if (!data?.chromaSlide3?.childImageSharp?.fluid) {
     return <p>no data</p>
   }
-  return (
-    <Img style={{ flex: 1 }} fluid={data.chromaSlide3.childImageSharp.fluid} />
-  )
+  return <Img fluid={data.chromaSlide3.childImageSharp.fluid} />
 }
 
 export default Slide3

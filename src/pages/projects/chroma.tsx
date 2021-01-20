@@ -31,7 +31,7 @@ const ChromaProjectPage = () => {
   `)
   return (
     <Layout>
-      <SectionWrapper>
+      <SectionWrapper alignItems="flex-start">
         {/* {data?.threePhones?.childImageSharp?.fluid ? (
           <Img
             style={{ flex: 1 }}
@@ -40,8 +40,10 @@ const ChromaProjectPage = () => {
         ) : (
           <p>no pic</p>
         )} */}
-        <SlideViewer style={{ flex: 1 }} />
-        <div style={{ display: "block", flex: 1 }}>
+        <div style={{ display: "flex", flex: 1, position: "relative" }}>
+          <SlideViewer style={{ flex: 1 }} />
+        </div>
+        <div style={{ display: "block", flex: 1, alignSelf: "flex-start" }}>
           <p>2020</p>
           <p>
             I worked with a small team of 5 to build and launch Chroma Signet -
