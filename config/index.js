@@ -1,7 +1,7 @@
 module.exports = {
   author: "@logan_t_",
-  siteTitle: "my web-portfolio",
-  siteDescription: "A portfolio of my dev work, and past work",
+  siteTitle: "portfolio",
+  siteDescription: "A portfolio of my dev work and music work",
   navLinks: {
     menu: [
       { name: "about", url: "/about" },

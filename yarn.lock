@@ -1122,6 +1122,26 @@
     ts-node "^9"
     tslib "^2"
 
+"@fontsource/cousine@^4.1.0":
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/@fontsource/cousine/-/cousine-4.1.0.tgz#d3cc4d019829dd9e5f554ea76c30a10d9c49b391"
+  integrity sha512-2lnHTpQ0R30C4fkkcfVsUxwg0pwvDa1KpGG4R5QG45V0jAgLh90B+hi/0i+W1yUMZOZidYZLgXAq3T0FnrXWpg==
+
+"@fontsource/open-sans@^4.1.0":
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/@fontsource/open-sans/-/open-sans-4.1.0.tgz#d44b4495bd23d78018675e4e79973894e393c0ed"
+  integrity sha512-sWDAAr6ESHJdBKXse6njvZem4sTZLILkugaEfAvpdFiaKBh2RnXTa4DJllDh5LzP0MLMUrfj/JAjMbKxWFo6pQ==
+
+"@fontsource/press-start-2p@^4.1.0":
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/@fontsource/press-start-2p/-/press-start-2p-4.1.0.tgz#75083e455478b4e3b8cbbb8f47dd1f644c9e4e23"
+  integrity sha512-SfJGheYN01J7KImmuRQbdhUlZiZ9iiOQ1ECI00b6+zYesKl5cEpshSSPoQJdbGh/LKwygyZk1HEeOgkPqT7yHA==
+
+"@fontsource/ubuntu-mono@^4.1.0":
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/@fontsource/ubuntu-mono/-/ubuntu-mono-4.1.0.tgz#cb110b1f4133b39637d11f06d15ca5e30b0627f0"
+  integrity sha512-YGRMPx+N67xWO8c1t1JzbygruG6N8Xf+IVTDxs+mjPCjyzAN3RtJ1/1jGza+eLXHhwQ0Ro9L52tNDiDmQwisRw==
+
 "@fortawesome/fontawesome-common-types@^0.2.32":
   version "0.2.32"
   resolved "https://npm.fontawesome.com/@fortawesome/fontawesome-common-types/-/0.2.32/fontawesome-common-types-0.2.32.tgz#3436795d5684f22742989bfa08f46f50f516f259"

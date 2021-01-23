@@ -2,6 +2,7 @@ import React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
+import { color } from "../../components/styles"
 import SectionWrapper from "./sectionWrapper"
 import GifPlayer, { GifPlayerProps } from "../gifPlayer"
 
@@ -14,7 +15,7 @@ const TokenTaxSection = () => {
       textAlign="left"
       direction="row"
       id="tokenTax"
-      background="gray"
+      background={color.silver}
     >
       <div style={{ flexDirection: "column", maxWidth: 300 }}>
         <h1 style={{ alignSelf: "flex-start" }}>Token Tax</h1>

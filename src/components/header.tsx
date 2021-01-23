@@ -6,15 +6,16 @@ import { color } from "./styles/color"
 import { navLinks } from "../../config"
 
 const activeStyle = {
-  color: color.silver,
+  color: color.turquoise,
 }
 
 const StyledHeader = styled.header`
-  background: linear-gradient(
-    90deg,
-    hsla(186, 33%, 94%, 1) 0%,
-    hsla(216, 41%, 79%, 1) 100%
-  );
+  // background: linear-gradient(
+  //   90deg,
+  //   hsla(186, 33%, 94%, 1) 0%,
+  //   hsla(216, 41%, 79%, 1) 100%
+  // );
+  background: ${color.xiketic};
 `
 
 const Header = ({ siteTitle }) => (
@@ -23,25 +24,25 @@ const Header = ({ siteTitle }) => (
       style={{
         // margin: `5 auto`,
         // maxWidth: 960,
-        padding: `1rem 3.0875rem`,
+        padding: `0.7rem 3.0875rem`,
         display: "flex",
         flex: 1,
         justifyContent: "space-between",
         alignItems: "center",
       }}
     >
-      <h2 style={{ margin: 0, flex: 4 }}>
+      <h3 style={{ margin: 0, flex: 4 }}>
         <Link
           to="/"
           style={{
-            color: `white`,
+            color: "white",
             textDecoration: `none`,
           }}
           activeStyle={activeStyle}
         >
           {siteTitle}
         </Link>
-      </h2>
+      </h3>
       <div
         style={{
           display: "flex",
@@ -52,7 +53,7 @@ const Header = ({ siteTitle }) => (
       >
         {navLinks.menu.map((item, i) => {
           return (
-            <h1
+            <h3
               key={item.name}
               style={{
                 color: color.mango,
@@ -64,14 +65,14 @@ const Header = ({ siteTitle }) => (
                 to={`/${item.name}`}
                 style={{
                   textDecoration: "none",
-                  color: color.eggShell,
+                  color: "white",
                   marginLeft: 10,
                 }}
                 activeStyle={activeStyle}
               >
                 {item.name}
               </Link>
-            </h1>
+            </h3>
           )
         })}
       </div>

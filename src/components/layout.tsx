@@ -13,7 +13,10 @@ import { color } from "./styles/color"
 import Header from "./header"
 import "./layout.css"
 // import "./assets/css/fonts.css"
-
+import "@fontsource/cousine"
+import "@fontsource/ubuntu-mono"
+import "@fontsource/open-sans"
+import "@fontsource/press-start-2p"
 const StyledLayoutDiv = styled.div`
   padding: 1rem 1.0875rem 1.45rem;
   display: flex;

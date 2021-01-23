@@ -5,6 +5,10 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@fontsource/cousine": "^4.1.0",
+    "@fontsource/open-sans": "^4.1.0",
+    "@fontsource/press-start-2p": "^4.1.0",
+    "@fontsource/ubuntu-mono": "^4.1.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
     "@fortawesome/react-fontawesome": "^0.1.14",

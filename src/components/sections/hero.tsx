@@ -170,6 +170,7 @@ const Hero = () => {
               ...textStyle,
               fontSize: 60,
               display: "flex",
+              marginBottom: 0,
               ...text1LightenAnimation,
             }}
           >
@@ -184,7 +185,7 @@ const Hero = () => {
               ...text1LightenAnimation,
             }}
           >
-            I am a developer and musician living in NYC.
+            I like to build things with code.
           </animated.h1>
         </div>
         <div
@@ -217,7 +218,7 @@ const Hero = () => {
             paddingTop: "1rem",
             paddingLeft: "3rem",
             paddingRight: "3rem",
-            paddingBottom: "10rem",
+            paddingBottom: "15rem",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",

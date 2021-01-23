@@ -7,13 +7,14 @@ export type SectionWrapperProps = {
 }
 const SectionWrapper = styled.div`
   display: flex;
+  flex: 1;
   width: 100vw;
   flex-direction: ${props => props.direction || `row`};
   align-items: ${props => props.align || `center`};
   justify-content: ${props => props.justifyContent || `space-around`};
   text-align: ${props => props.textAlign || `center`};
   background: ${props => props.background || null};
-  padding: 3rem;
+  padding: ${props => props.padding || `3rem`};
   padding-top: ${props => props.paddingTop || null};
   overflow: hidden;
 `

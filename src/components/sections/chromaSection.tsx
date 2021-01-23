@@ -41,8 +41,10 @@ const ChromaSection = () => {
           Chroma Signet
         </h1>
         <p style={{ textAlign: "end" }}>
-          I worked on building and releasing an app from scratch with a small
-          team of 5 using React Native
+          I worked on a small team to build and release Chroma Signet app from
+          the ground up.
+          {/* I worked on building and releasing an app from scratch with a small
+          team of 5 using React Native */}
         </p>
         <Link
           to="/projects/chroma"

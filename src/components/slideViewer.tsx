@@ -6,57 +6,51 @@ import {
   faChevronLeft,
 } from "@fortawesome/free-solid-svg-icons"
 import { useTransition, animated } from "react-spring"
-import { Slide1, Slide2, Slide3 } from "../components/chromaSlides"
+// import { Slide1, Slide2, Slide3 } from "../components/chromaSlides"
 
-// const SlideViewer = () => {
-//   return (
-//     <Slider auto={1}>
-//       <div>hi</div>
-//       <div>ho</div>
-//       <div>hey</div>
-//       <div>hwww</div>
-//     </Slider>
-//   )
-// }
+// const pages = [
+//   ({ style }) => (
+//     <animated.div
+//       style={{ ...style, position: "absolute", width: "100%", height: "100%" }}
+//     >
+//       <Slide1 />
+//     </animated.div>
+//   ),
+//   ({ style }) => (
+//     <animated.div
+//       style={{ ...style, position: "absolute", width: "100%", height: "100%" }}
+//     >
+//       <Slide2 />
+//     </animated.div>
+//   ),
+//   ({ style }) => (
+//     <animated.div
+//       style={{ ...style, position: "absolute", width: "100%", height: "100%" }}
+//     >
+//       <Slide3 />
+//     </animated.div>
+//   ),
+// ]
 
-// const StyledTransitionContainer = styled.div`
-//   cursor: pointer;
-//   position: relative;
-//   height: 600px;
-//   width: 100%;
-//   & > div {
-//     will-change: transform, opacity;
-//     position: absolute;
-//     width: 100%;
-//     height: 100%;
-//   }
-// `
+export const makePages = slides => {
+  const pages = slides.map(Slide => {
+    return ({ style }) => (
+      <animated.div
+        style={{
+          ...style,
+          position: "absolute",
+          width: "100%",
+          height: "100%",
+        }}
+      >
+        <Slide />
+      </animated.div>
+    )
+  })
+  return pages
+}
 
-const pages = [
-  ({ style }) => (
-    <animated.div
-      style={{ ...style, position: "absolute", width: "100%", height: "100%" }}
-    >
-      <Slide1 />
-    </animated.div>
-  ),
-  ({ style }) => (
-    <animated.div
-      style={{ ...style, position: "absolute", width: "100%", height: "100%" }}
-    >
-      <Slide2 />
-    </animated.div>
-  ),
-  ({ style }) => (
-    <animated.div
-      style={{ ...style, position: "absolute", width: "100%", height: "100%" }}
-    >
-      <Slide3 />
-    </animated.div>
-  ),
-]
-
-const SlideViewer = ({ ...props }) => {
+const SlideViewer = ({ pages, ...props }) => {
   const [index, set] = useState(0)
   const [dir, setDir] = useState(1)
   const onClick = useCallback(() => set(state => (state + 1) % 3), [])
@@ -67,7 +61,6 @@ const SlideViewer = ({ ...props }) => {
     leave: { opacity: 0, transform: `translate3d(${-50 * dir}%, 0, 0)` },
   })
 
-  console.log("index", index)
   return (
     <div
       // className="simple-trans-main"
@@ -75,18 +68,18 @@ const SlideViewer = ({ ...props }) => {
         position: "relative",
         // display: "flex",
         // flexDirection: "row",
-        height: 450,
+        height: 400,
         width: 600,
         flexWrap: "nowrap",
         overflow: "hidden",
       }}
-      onClick={onClick}
+      // onClick={onClick}
       {...props}
     >
       <div
         onClick={() => {
           setDir(1)
-          onClick
+          onClick()
         }}
         style={{
           position: "absolute",
@@ -96,19 +89,22 @@ const SlideViewer = ({ ...props }) => {
           cursor: "pointer",
           // width: "50%",
           // marginRight: "50%",
-          paddingLeft: "50%",
-          paddingBottom: "50%",
+          // paddingLeft: "50%",
+          // paddingBottom: "50%",
           // paddingTop: "50%",
           // height: "100%",
-          background: "red",
         }}
       >
-        <FontAwesomeIcon icon={faChevronRight} size="2x" />
+        <FontAwesomeIcon
+          icon={faChevronRight}
+          size="3x"
+          style={{ opacity: 0.6 }}
+        />
       </div>
       <div
         onClick={() => {
           setDir(-1)
-          onClick
+          onClick()
         }}
         style={{
           position: "absolute",
@@ -116,9 +112,15 @@ const SlideViewer = ({ ...props }) => {
           top: "50%",
           zIndex: 3,
           cursor: "pointer",
+          // paddingRight: "50%",
+          // paddingBottom: "50%",
         }}
       >
-        <FontAwesomeIcon icon={faChevronLeft} size="2x" />
+        <FontAwesomeIcon
+          icon={faChevronLeft}
+          size="3x"
+          style={{ opacity: 0.6 }}
+        />
       </div>
 
       {transitions.map(({ item, props, key }) => {
