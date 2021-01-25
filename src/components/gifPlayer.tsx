@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, CSSProperties } from "react"
 import { Helmet } from "react-helmet"
 import { useSpring, animated } from "react-spring"
 import styled, { keyframes, css } from "styled-components"
@@ -22,6 +22,7 @@ const shrinkInterpolation = props =>
 type GifButtonProps = {
   isToggled: boolean
   hide: boolean
+  color?: string
 }
 
 const StyledGifButtonP = styled.p`
@@ -30,15 +31,16 @@ const StyledGifButtonP = styled.p`
   top: 50%;
   left: 50%;
   font-family: sans-serif;
-  border: 3px dotted black;
+  border: 3px dotted ${props => props.color || "black"};
   border-radius: 50%;
   cursor: pointer;
   padding: 5px;
   animation: ${shrinkInterpolation};
   transform: translate(-50%, -50%);
+  color: ${props => (props.color ? props.color : "black")};
 `
 
-const GifButton = ({ isToggled }: GifButtonProps) => {
+const GifButton = ({ isToggled, color }: GifButtonProps) => {
   return (
     <>
       {/* <p
@@ -58,7 +60,9 @@ const GifButton = ({ isToggled }: GifButtonProps) => {
           // animation: isToggled ? `${shrinkAnimation} 1s linear forward` : null,
         }}
       > */}
-      <StyledGifButtonP isToggled={isToggled}>GIF</StyledGifButtonP>
+      <StyledGifButtonP color={color} isToggled={isToggled}>
+        GIF
+      </StyledGifButtonP>
       {/* </p> */}
     </>
   )
@@ -67,9 +71,16 @@ const GifButton = ({ isToggled }: GifButtonProps) => {
 export type GifPlayerProps = {
   stillSrc: string
   gifSrc: string
+  imgStyle?: CSSProperties
+  buttonColor?: string
 }
 
-const GifPlayer = ({ stillSrc, gifSrc }: GifPlayerProps) => {
+const GifPlayer = ({
+  stillSrc,
+  gifSrc,
+  imgStyle,
+  buttonColor,
+}: GifPlayerProps) => {
   const [toggleGif, setToggleGif] = useState(false)
   const [hide, setHide] = useState(true)
   const handleToggle = () => {
@@ -84,10 +95,12 @@ const GifPlayer = ({ stillSrc, gifSrc }: GifPlayerProps) => {
       <div onClick={handleToggle}>
         <div style={{ position: "relative" }}>
           <img
-            style={{ marginBottom: -10 }} //why is there default bottom margin?
+            style={{ marginBottom: -10, ...imgStyle }} //why is there default bottom margin?
             src={toggleGif ? gifSrc : stillSrc}
           />
-          {toggleGif ? null : <GifButton hide={hide} isToggled={toggleGif} />}
+          {toggleGif ? null : (
+            <GifButton hide={hide} isToggled={toggleGif} color={buttonColor} />
+          )}
         </div>
       </div>
     </>

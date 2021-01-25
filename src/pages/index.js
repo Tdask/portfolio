@@ -11,6 +11,7 @@ import Layout from "../components/layout"
 import Scroll from "../components/scroll"
 import SEO from "../components/seo"
 import MelodySection from "../components/sections/melodyMakerSection"
+import StockSection from "../components/sections/stockSection"
 
 const dummyStyles = {
   background: "green",
@@ -77,6 +78,7 @@ const IndexPage = () => (
         </Spring>
       )}
     </VisibilitySensor>
+    <StockSection />
   </Layout>
 )
 

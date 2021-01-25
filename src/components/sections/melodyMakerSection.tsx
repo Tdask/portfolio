@@ -4,6 +4,11 @@ import Img from "gatsby-image"
 import Section, { SectionProps } from "./section"
 import SectionWrapper from "./sectionWrapper"
 import Iframe from "react-iframe"
+import GifPlayer, { GifPlayerProps } from "../gifPlayer"
+import { color } from "../styles"
+
+const gifSrc = require("../../images/gifs/neuralMelodyCapture.gif")
+const stillSrc = require("../../images/nmmStill.png")
 
 const melodyData: SectionProps = {
   id: "MelodyMaker",
@@ -29,22 +34,41 @@ const MelodySection = () => {
     return <div>Picture not found</div>
   }
   return (
-    <SectionWrapper id="neuralMelody" direction="column">
-      <h1>Neural Melody Maker (spring 2019)</h1>
-      <div
+    <SectionWrapper
+      id="neuralMelody"
+      justifyContent="space-around"
+      background={color.midnight}
+    >
+      {/* <div
         style={{ display: "flex", flexDirection: "row", marginTop: "1.45rem" }}
-      >
-        <Img
+      > */}
+      {/* <Img
           style={{ flex: 1.2 }}
           fluid={data.melodyMakerImage.childImageSharp.fluid}
-        />
-        <div style={{ flex: 2 }}>
-          <p>
-            Generate and build upon melodies using a recurrent neural network.
-            Uses google's Magenta.js api as well as web audio.
-          </p>
-        </div>
+        /> */}
+      <GifPlayer
+        gifSrc={gifSrc}
+        stillSrc={stillSrc}
+        imgStyle={{ transform: "scale(1.2)" }}
+        buttonColor="orange"
+      />
+      <div
+        style={{
+          flex: 1,
+          maxWidth: 300,
+          flexDirection: "column",
+          justifyContent: "space-around",
+          textAlign: "right",
+          color: color.mango,
+        }}
+      >
+        <h1>Neural Melody Maker</h1>
+        <p>
+          Generate and build upon melodies using a recurrent neural network.
+          Uses google's Magenta.js api as well as web audio.
+        </p>
       </div>
+      {/* </div> */}
     </SectionWrapper>
   )
 }
