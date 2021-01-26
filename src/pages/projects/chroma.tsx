@@ -6,6 +6,7 @@ import SlideViewer, { makePages } from "../../components/slideViewer"
 import chromaSlides from "../../components/chromaSlides"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
+import Back from "../../components/backButton"
 
 const pages = makePages(chromaSlides)
 
@@ -21,17 +22,17 @@ const technologies = [
 ]
 
 const ChromaProjectPage = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      threePhones: file(relativePath: { eq: "threePhones.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 600) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `)
+  // const data = useStaticQuery(graphql`
+  //   query {
+  //     threePhones: file(relativePath: { eq: "threePhones.png" }) {
+  //       childImageSharp {
+  //         fluid(maxWidth: 600) {
+  //           ...GatsbyImageSharpFluid
+  //         }
+  //       }
+  //     }
+  //   }
+  // `)
   return (
     <Layout>
       <SectionWrapper alignItems="flex-start">
@@ -43,7 +44,7 @@ const ChromaProjectPage = () => {
         ) : (
           <p>no pic</p>
         )} */}
-        <div style={{ textAlign: "left" }}>
+        <div style={{ textAlign: "left", flex: 1 }}>
           <SlideViewer
             pages={pages}
             // style={{ flex: 1 }}
@@ -51,31 +52,17 @@ const ChromaProjectPage = () => {
           <h2 style={{ marginTop: "1.45rem" }}>Technologies used:</h2>
           <div style={{ display: "flex" }}>
             <ul
-              style={
-                {
-                  // display: "flex",
-                  // flex: 0.5,
-                  // justifyContent: "space-around",
-                }
-              }
+              style={{
+                display: "flex",
+                flexWrap: "wrap",
+                // flex: 0.5,
+                // justifyContent: "space-around",
+              }}
             >
-              {technologies.slice(0, 2).map(item => (
-                <li key={item}>{item} </li>
-              ))}
-            </ul>
-            <ul>
-              {technologies.slice(2, 4).map(item => (
-                <li key={item}>{item} </li>
-              ))}
-            </ul>
-            <ul>
-              {technologies.slice(4, 6).map(item => (
-                <li key={item}>{item} </li>
-              ))}
-            </ul>
-            <ul>
-              {technologies.slice(6, 8).map(item => (
-                <li key={item}>{item} </li>
+              {technologies.map(item => (
+                <li key={item} style={{ paddingRight: "2rem" }}>
+                  {item}
+                </li>
               ))}
             </ul>
           </div>
@@ -132,16 +119,9 @@ const ChromaProjectPage = () => {
           </p>
         </div>
       </SectionWrapper>
-      {/* <div style={{ padding: "3rem" }}>
-        <h2>Technologies used:</h2>
-        <ul
-          style={{ display: "flex", flex: 0.5, justifyContent: "space-around" }}
-        >
-          {technologies.map(item => (
-            <li key={item}>{item} </li>
-          ))}
-        </ul>
-      </div> */}
+      <SectionWrapper>
+        <Back />
+      </SectionWrapper>
     </Layout>
   )
 }

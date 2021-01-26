@@ -20,12 +20,10 @@ const StockSection = () => {
       <div style={{ flexDirection: "column", maxWidth: 300 }}>
         <h1 style={{ alignSelf: "flex-start" }}>Stock Portfolio</h1>
         <p style={{ textAlign: "left" }}>
-          A full stack application that allows users to sign-up, log-in, search
-          for stocks using IEX cloud api, purchase stocks and keep track of
-          running value of purchases.
+          A full stack stock portfolio application using IEX cloud api.
         </p>
         <Link
-          to="/projects/tokentax"
+          to="/projects/stock-portfolio"
           style={{
             textDecoration: `none`,
             alignSelf: "flex-start",

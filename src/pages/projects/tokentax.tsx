@@ -5,6 +5,7 @@ import Layout from "../../components/layout"
 import SectionWrapper from "../../components/sections/sectionWrapper"
 import SlideViewer, { makePages } from "../../components/slideViewer"
 import ttSlides from "../../components/tokentaxSlides"
+import Back from "../../components/backButton"
 
 const pages = makePages(ttSlides)
 
@@ -22,17 +23,17 @@ const technologies = [
 ]
 
 const TTProjectPage = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      blogShot: file(relativePath: { eq: "TTshot1.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 900) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `)
+  // const data = useStaticQuery(graphql`
+  //   query {
+  //     blogShot: file(relativePath: { eq: "TTshot1.png" }) {
+  //       childImageSharp {
+  //         fluid(maxWidth: 900) {
+  //           ...GatsbyImageSharpFluid
+  //         }
+  //       }
+  //     }
+  //   }
+  // `)
   return (
     <Layout>
       <SectionWrapper>
@@ -44,7 +45,9 @@ const TTProjectPage = () => {
         ) : (
           <p>no pic</p>
         )} */}
-        <SlideViewer pages={pages} />
+        <div>
+          <SlideViewer pages={pages} />
+        </div>
         <div
           style={{
             display: "block",
@@ -64,9 +67,24 @@ const TTProjectPage = () => {
             I also did some SEO work for their site, building schemas and
             inserting them to the head with React Helmet. Checkout it out here.
           </p>
+          <h2>Technologies used:</h2>
+          <ul
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              // flex: 0.5,
+              // justifyContent: "space-around",
+            }}
+          >
+            {technologies.map(item => (
+              <li key={item} style={{ paddingRight: "2rem" }}>
+                {item}{" "}
+              </li>
+            ))}
+          </ul>
         </div>
       </SectionWrapper>
-      <div style={{ padding: "3rem" }}>
+      {/* <div style={{ padding: "3rem" }}>
         <h2>Technologies used:</h2>
         <ul
           style={{ display: "flex", flex: 0.5, justifyContent: "space-around" }}
@@ -75,7 +93,10 @@ const TTProjectPage = () => {
             <li key={item}>{item} </li>
           ))}
         </ul>
-      </div>
+      </div> */}
+      <SectionWrapper>
+        <Back />{" "}
+      </SectionWrapper>
     </Layout>
   )
 }

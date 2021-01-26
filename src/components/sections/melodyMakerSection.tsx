@@ -1,7 +1,9 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 import Section, { SectionProps } from "./section"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
 import SectionWrapper from "./sectionWrapper"
 import Iframe from "react-iframe"
 import GifPlayer, { GifPlayerProps } from "../gifPlayer"
@@ -67,6 +69,19 @@ const MelodySection = () => {
           Generate and build upon melodies using a recurrent neural network.
           Uses google's Magenta.js api as well as web audio.
         </p>
+        <Link
+          to="/projects/neural-melody"
+          style={{
+            textDecoration: `none`,
+            alignSelf: "flex-start",
+          }}
+        >
+          more&nbsp;
+          <FontAwesomeIcon
+            icon={faArrowRight}
+            // style={{ cursor: "pointer", alignSelf: "flex-end" }}
+          />
+        </Link>
       </div>
       {/* </div> */}
     </SectionWrapper>
