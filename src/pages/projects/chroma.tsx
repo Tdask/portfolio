@@ -76,12 +76,12 @@ const ChromaProjectPage = () => {
             textAlign: "left",
           }}
         >
-          <p>2020</p>
+          <h2>Front-end developer at Chroma Signet, 2020</h2>
           <p style={{ textAlign: "left" }}>
-            I worked with a team of 5 to build and launch Chroma Signet - an
+            I worked with a team of five to build and launch Chroma Signet: an
             open source protocol system for supply chain verification of
-            products. I was responsible for building front end components across
-            all projects related to this, which included:
+            products. I was responsible for building front-end components across
+            all related projects, which included:
             <ul
               style={{
                 textAlign: "left",
@@ -91,31 +91,31 @@ const ChromaProjectPage = () => {
               }}
             >
               <li>
-                an app built in React-Native that allows both customers to scan
-                a product's custom Signet 'crypto' sticker with their phone and
-                be shown information about a brand's product, as well as for
-                businesses to offer loyalty rewards to customers
+                an app built in React-Native that allows customers to scan a
+                product's custom Signet 'crypto' sticker with their phone and be
+                shown information about a brand's product, and businesses to
+                offer loyalty rewards to customers
               </li>
               <li>
-                admin dashboard and tooling for businesses, including an SVG
-                color picker interface, forms to generate product info cards,
-                sticker batch generating form.
+                admin tooling and dashboard for businesses, including an SVG
+                color-picker interface, forms to generate product info cards,
+                and a sticker batch generating form
               </li>
               <li>
-                a suite of marketing pages, built to spec and coordination with
-                designer.
+                a suite of marketing pages, built to spec in coordination with
+                the designer.
               </li>
             </ul>
           </p>
           <p style={{ textAlign: "left" }}>
             One fun challenge that I faced was building a component system that
-            is responsive, performant, as well as compatible across both web and
-            native platforms (such as a product card that is shared between the
-            app and the admin dashboard). Forced me to think about components I
-            was building on and even higher level of abstraction, and also to be
-            more deeply aware of the the very structure of the file system of
-            the monorepo (ensuring a unidirectional flow of dependencies amongst
-            component abstractions for instance).
+            is responsive, performant, and compatible across both web and native
+            platforms (such as a product card that is shared between the app and
+            the admin dashboard). This made me consider the components I was
+            building on an even higher level of abstraction, and more aware of
+            the structure of the file system of the monorepo (ensuring a
+            unidirectional flow of dependencies amongst component abstractions,
+            for instance).
           </p>
         </div>
       </SectionWrapper>

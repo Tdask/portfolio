@@ -15,7 +15,7 @@ const StockSection = () => {
       textAlign="left"
       // direction="row-reverse"
       id="stocks"
-      background={color.eggShell}
+      background={color.silver}
     >
       <div style={{ flexDirection: "column", maxWidth: 300 }}>
         <h1 style={{ alignSelf: "flex-start" }}>Stock Portfolio</h1>

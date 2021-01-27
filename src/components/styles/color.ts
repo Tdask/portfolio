@@ -11,7 +11,8 @@ export const  color = {
   eerieBlack: '#181a19',
   razz: '#ea3373',
   orangeCrayon: '#EB7533',
-  turquoise: '#11D0BA'
+  turquoise: '#11D0BA',
+  cornflowerBlue: '#71A0F4ff'
 }
 
 // /* CSS HEX */

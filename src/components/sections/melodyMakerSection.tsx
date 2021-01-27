@@ -39,7 +39,7 @@ const MelodySection = () => {
     <SectionWrapper
       id="neuralMelody"
       justifyContent="space-around"
-      background={color.midnight}
+      background={color.eggShell}
     >
       {/* <div
         style={{ display: "flex", flexDirection: "row", marginTop: "1.45rem" }}
@@ -61,13 +61,13 @@ const MelodySection = () => {
           flexDirection: "column",
           justifyContent: "space-around",
           textAlign: "right",
-          color: color.mango,
+          // color: "white",
         }}
       >
         <h1>Neural Melody Maker</h1>
         <p>
-          Generate and build upon melodies using a recurrent neural network.
-          Uses google's Magenta.js api as well as web audio.
+          A fun tool that allows users to generate and progress melodies using a
+          recurrent neural network. Built with Magenta JS.
         </p>
         <Link
           to="/projects/neural-melody"

@@ -56,16 +56,16 @@ const TTProjectPage = () => {
             padding: "3rem",
           }}
         >
-          <p>fall 2019</p>
+          <h2> Contract developer at Token Tax, fall 2019</h2>
           <p>
-            I worked on some contract-based projects for Token Tax, a startup
-            that provides tax accounting services for cryptocurrencies. One big
-            project that I tackled was to build out their marketing site's blogs
-            and resources section, the data for which was managed by Contentful
-            headless CMS. I built the components to present blog data, the
-            layout page for all blogs, and also a search bar using algolia api.
-            I also did some SEO work for their site, building schemas and
-            inserting them to the head with React Helmet. Checkout it out here.
+            I worked on some projects at this start-up that provides tax
+            accounting services for cryptocurrencies. One big project that I
+            tackled was to build out their marketing site's blogs and resources
+            section, the data for which was managed by Contentful headless CMS.
+            I built the components to present blog data, the layout page for all
+            blogs, and also a search bar using algolia api. I also did some SEO
+            work for their site, building schemas and inserting them to the head
+            with React Helmet. Take a look >
           </p>
           <h2>Technologies used:</h2>
           <ul

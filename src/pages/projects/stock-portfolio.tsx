@@ -24,12 +24,12 @@ const StockPage = () => {
           <SlideViewer pages={pages} />
         </div>
         <div style={{ padding: "3rem", textAlign: "right" }}>
-          <p>summer 2019</p>
+          <h2>Personal project, summer 2019</h2>
           <p>
-            Full stack app built using the NERDS stack. Built as part of my
-            application for NY TTP program in 2019. Allows users to sign-up,
-            log-in, search for and purchase stocks as well keep track of current
-            value of purchases.
+            I built this full stack app as part of my application for the NY-TTP
+            program in 2019. It allows users to sign up, log in, search for and
+            purchase stocks, as well as keep track of the current value of
+            purchases.
           </p>
           <h2 style={{ textAlign: "left" }}>Technologies Used:</h2>
           <ul

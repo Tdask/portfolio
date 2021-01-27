@@ -16,40 +16,44 @@ const EmailForm = () => {
       <form
         method="post"
         action="https://formsubmit.co/825179f2450cf33f87dc8f2e99ad8a1c"
-        // style={{ margin: "3rem" }}
+        // style={{ padding: "3rem" }}
       >
         <div
           style={{
             display: "flex",
-            background: "green",
+            // background: "green",
             // flex: 1,
             flexDirection: "column",
             alignItems: "space-around",
             justifyContent: "space-around",
           }}
         >
-          <input
-            placeholder="Email *"
-            type="email"
-            name="email"
-            required={true}
-            // style={{ margin: 20 }}
-          />
-          <input
-            placeholder="Name *"
-            type="text"
-            name="name"
-            required={true}
-            // style={{ margin: 20 }}
-          />
+          <div style={{ display: "flex", marginBottom: "2rem" }}>
+            <input
+              placeholder="Email *"
+              type="email"
+              name="email"
+              required={true}
+              style={{ padding: 10, marginRight: 10 }}
+            />
+            <input
+              placeholder="Name *"
+              type="text"
+              name="name"
+              required={true}
+              style={{ padding: 10 }}
+            />
+          </div>
           <textarea
             placeholder="Message *"
             name="message"
             required={true}
-            // style={{ margin: 20 }}
+            style={{ padding: 10 }}
           />
         </div>
-        <button type="submit">Send Message</button>
+        <button type="submit" style={{ marginTop: "3rem", padding: 10 }}>
+          Send Message
+        </button>
       </form>
     </div>
   )

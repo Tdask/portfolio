@@ -20,8 +20,8 @@ const TokenTaxSection = () => {
       <div style={{ flexDirection: "column", maxWidth: 300 }}>
         <h1 style={{ alignSelf: "flex-start" }}>Token Tax</h1>
         <p style={{ textAlign: "left" }}>
-          I built out blog pages on marketing site, as well as internal tooling
-          for admin dashboard client comment feature.
+          I did a variety of front-end tasks for the marketing site of this tax
+          support start-up.
         </p>
         <Link
           to="/projects/tokentax"

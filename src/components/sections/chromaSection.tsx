@@ -35,14 +35,20 @@ const ChromaSection = () => {
       justifyContent="space-around"
       background={color.eggShell}
     >
-      <div style={{ display: "flex", flexDirection: "column", maxWidth: 300 }}>
+      <div style={{ display: "flex", flexDirection: "column", maxWidth: 350 }}>
         {/* <ChromaIcon /> */}
-        <h1 style={{ alignSelf: "flex-end", color: color.midnight }}>
+        <h1
+          style={{
+            alignSelf: "flex-end",
+            color: color.midnight,
+            flexWrap: "nowrap",
+          }}
+        >
           Chroma Signet
         </h1>
         <p style={{ textAlign: "end" }}>
-          I worked on a small team to build and release Chroma Signet app from
-          the ground up.
+          I worked on a small team to build and release this supply chain
+          transparency app from the ground up.
           {/* I worked on building and releasing an app from scratch with a small
           team of 5 using React Native */}
         </p>
