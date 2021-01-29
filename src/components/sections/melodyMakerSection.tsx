@@ -13,78 +13,28 @@ const gifSrc = require("../../images/gifs/neuralMelodyCapture.gif")
 const stillSrc = require("../../images/nmmStill.png")
 
 const melodyData: SectionProps = {
-  id: "MelodyMaker",
-  background: "#b5b0b8ff",
+  id: "neuralMelody",
+  background: color.eggShell,
   title: "Neural Melody Maker",
   description:
-    "Build and progress endless variations of a melody using Recurrent Neural Network ",
-  justifyContent: "center",
+    "A fun tool that allows users to generate and progress melodies using a recurrent neural network. Built with Magenta JS.",
+  moreLink: "/projects/neural-melody",
+  direction: "row-reverse",
+  gifProps: {
+    gifSrc,
+    stillSrc,
+    buttonColor: "yellow",
+    // imgStyle: { transform: "scale(1.2)" },
+  },
 }
-const MelodySection = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      melodyMakerImage: file(relativePath: { eq: "NeuralMM.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 500) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `)
-  if (!data?.melodyMakerImage?.childImageSharp?.fluid) {
-    return <div>Picture not found</div>
-  }
+const MelodySection = ({ breakpoints }) => {
+  const { md } = breakpoints
   return (
-    <SectionWrapper
-      id="neuralMelody"
-      justifyContent="space-around"
-      background={color.eggShell}
-    >
-      {/* <div
-        style={{ display: "flex", flexDirection: "row", marginTop: "1.45rem" }}
-      > */}
-      {/* <Img
-          style={{ flex: 1.2 }}
-          fluid={data.melodyMakerImage.childImageSharp.fluid}
-        /> */}
-      <GifPlayer
-        gifSrc={gifSrc}
-        stillSrc={stillSrc}
-        imgStyle={{ transform: "scale(1.2)" }}
-        buttonColor="orange"
-      />
-      <div
-        style={{
-          flex: 1,
-          maxWidth: 300,
-          flexDirection: "column",
-          justifyContent: "space-around",
-          textAlign: "right",
-          // color: "white",
-        }}
-      >
-        <h1>Neural Melody Maker</h1>
-        <p>
-          A fun tool that allows users to generate and progress melodies using a
-          recurrent neural network. Built with Magenta JS.
-        </p>
-        <Link
-          to="/projects/neural-melody"
-          style={{
-            textDecoration: `none`,
-            alignSelf: "flex-start",
-          }}
-        >
-          more&nbsp;
-          <FontAwesomeIcon
-            icon={faArrowRight}
-            // style={{ cursor: "pointer", alignSelf: "flex-end" }}
-          />
-        </Link>
-      </div>
-      {/* </div> */}
-    </SectionWrapper>
+    <Section
+      {...melodyData}
+      direction={md ? "column" : "row-reverse"}
+      showMobile={md}
+    />
   )
 }
 

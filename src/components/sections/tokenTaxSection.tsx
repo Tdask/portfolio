@@ -1,44 +1,33 @@
 import React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
+import Section, { SectionProps } from "./section"
 import { color } from "../../components/styles"
-import SectionWrapper from "./sectionWrapper"
-import GifPlayer, { GifPlayerProps } from "../gifPlayer"
+import { GifPlayerProps } from "../gifPlayer"
 
 const stillSrc: GifPlayerProps["stillSrc"] = require("../../images/TTstill.png")
 const gifSrc: GifPlayerProps["gifSrc"] = require("../../images/gifs/TTcapture.gif")
 
-const TokenTaxSection = () => {
+const tokenTaxData: SectionProps = {
+  id: "tokenTax",
+  background: color.silver,
+  title: "Token Tax",
+  description:
+    "I did a variety of front-end tasks for the marketing site of this tax support start-up.",
+  moreLink: "/projects/tokentax",
+  gifProps: {
+    stillSrc,
+    gifSrc,
+  },
+}
+
+const TokenTaxSection = ({ breakpoints }) => {
+  const { md } = breakpoints
   return (
-    <SectionWrapper
-      textAlign="left"
-      direction="row"
-      id="tokenTax"
-      background={color.silver}
-    >
-      <div style={{ flexDirection: "column", maxWidth: 300 }}>
-        <h1 style={{ alignSelf: "flex-start" }}>Token Tax</h1>
-        <p style={{ textAlign: "left" }}>
-          I did a variety of front-end tasks for the marketing site of this tax
-          support start-up.
-        </p>
-        <Link
-          to="/projects/tokentax"
-          style={{
-            textDecoration: `none`,
-            alignSelf: "flex-start",
-          }}
-        >
-          more&nbsp;
-          <FontAwesomeIcon
-            icon={faArrowRight}
-            // style={{ cursor: "pointer", alignSelf: "flex-end" }}
-          />
-        </Link>
-      </div>
-      <GifPlayer gifSrc={gifSrc} stillSrc={stillSrc} />
-    </SectionWrapper>
+    <Section
+      {...tokenTaxData}
+      direction={md ? "column" : "row"}
+      showMobile={md}
+    />
   )
 }
 

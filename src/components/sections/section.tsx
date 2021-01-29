@@ -1,14 +1,19 @@
 import React, { ReactNode } from "react"
 import SectionWrapper from "./sectionWrapper"
+import MoreButton from "./moreButton"
 import GifPlayer, { GifPlayerProps } from "../gifPlayer"
 
 export type SectionProps = {
   id: string
-  background: string
-  reverse?: boolean
+  background?: string
+  // reverse?: boolean
   title: string
   description: string
+  moreLink?: string
+  gifProps: GifPlayerProps
   children?: ReactNode | null
+  direction?: "row" | "column" | "row-reverse" | "column-reverse"
+  textAlign?: "left" | "right" | "center"
   alignItems?: "flex-start" | "flex-end" | "center"
   justifyContent?:
     | "flex-start"
@@ -16,29 +21,43 @@ export type SectionProps = {
     | "center"
     | "space-around"
     | "space-between"
+  showMobile?: boolean
 }
 
 const Section = ({
   id,
   background,
-  reverse,
   title,
   description,
+  moreLink,
+  gifProps,
   children = null,
+  direction = "row",
   alignItems,
-}) => {
+  textAlign = "left",
+  showMobile,
+}: SectionProps) => {
   return (
     <SectionWrapper
-      direction={reverse ? "row-reverse" : "row"}
+      direction={direction}
       id={id}
       background={background}
       alignItems={alignItems}
     >
-      <div style={{ flexDirection: "column", flex: 2 }}>
-        <h1 style={{ alignSelf: "flex-start" }}>{title} </h1>
-        <p style={{}}>{description}</p>
+      <div
+        style={{
+          flexDirection: "column",
+          flex: 1,
+          textAlign: textAlign,
+          maxWidth: 350,
+          marginBottom: showMobile ? "2rem" : null,
+        }}
+      >
+        <h1>{title} </h1>
+        <p>{description}</p>
+        <MoreButton link={moreLink} />
       </div>
-      {/* <GifPlayer gifSrc={gifSrc} stillSrc={stillSrc} /> */}
+      <GifPlayer {...gifProps} />
       {children}
     </SectionWrapper>
   )

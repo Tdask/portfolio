@@ -19,6 +19,7 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-smoothscroll`,
+    `gatsby-plugin-breakpoints`,
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
