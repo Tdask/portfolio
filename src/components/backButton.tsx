@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faArrowLeft } from "@fortawesome/free-solid-svg-icons"
+// import { faArrowLeft } from "@fortawesome/free-solid-svg-icons"
 
 const BackWrapper = styled.div`
   position: absolute;
@@ -16,7 +16,7 @@ const Back = () => {
     <BackWrapper>
       <FontAwesomeIcon
         style={{ cursor: "pointer" }}
-        icon={faArrowLeft}
+        icon="arrow-left"
         size="3x"
         onClick={
           typeof history !== "undefined"

@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import scrollTo from "gatsby-plugin-smoothscroll"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faChevronDown } from "@fortawesome/free-solid-svg-icons"
+// import { faChevronDown } from "@fortawesome/free-solid-svg-icons"
 import { SectionWrapper } from "./sections/index"
 
 type ScrollProps = {
@@ -24,7 +24,7 @@ const Scroll = ({ id }: ScrollProps) => {
         className="scroll"
         size="3x"
         style={{ cursor: "pointer" }}
-        icon={faChevronDown}
+        icon="chevron-down"
         onClick={() => scrollTo(`#${id}`)}
       />
     </ScrollWrapper>

@@ -1,10 +1,10 @@
 import React, { useState, useCallback } from "react"
 import styled from "styled-components"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import {
-  faChevronRight,
-  faChevronLeft,
-} from "@fortawesome/free-solid-svg-icons"
+// import {
+//   faChevronRight,
+//   faChevronLeft,
+// } from "@fortawesome/free-solid-svg-icons"
 import { useTransition, animated } from "react-spring"
 
 const arrowStyle = {
@@ -71,7 +71,7 @@ const SlideViewer = ({ slides, breakpoints, ...props }) => {
         }}
       >
         <FontAwesomeIcon
-          icon={faChevronRight}
+          icon="chevron-right"
           size="3x"
           style={{ opacity: 0.6 }}
         />
@@ -90,7 +90,7 @@ const SlideViewer = ({ slides, breakpoints, ...props }) => {
         }}
       >
         <FontAwesomeIcon
-          icon={faChevronLeft}
+          icon="chevron-left"
           size="3x"
           style={{ opacity: 0.6 }}
         />

@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
+// import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
 
 type MoreButtonProps = {
   link: string
@@ -17,7 +17,7 @@ const MoreButton = ({ link }) => {
       }}
     >
       more&nbsp;
-      <FontAwesomeIcon icon={faArrowRight} />
+      <FontAwesomeIcon icon="arrow-right" />
     </Link>
   )
 }
