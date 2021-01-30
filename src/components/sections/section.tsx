@@ -6,7 +6,6 @@ import GifPlayer, { GifPlayerProps } from "../gifPlayer"
 export type SectionProps = {
   id: string
   background?: string
-  // reverse?: boolean
   title: string
   description: string
   moreLink?: string
