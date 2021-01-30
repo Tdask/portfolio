@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { FaArrowLeft } from "react-icons/fa"
 // import { faArrowLeft } from "@fortawesome/free-solid-svg-icons"
 
 const BackWrapper = styled.div`
@@ -14,10 +15,19 @@ const BackWrapper = styled.div`
 const Back = () => {
   return (
     <BackWrapper>
-      <FontAwesomeIcon
+      {/* <FontAwesomeIcon
         style={{ cursor: "pointer" }}
         icon="arrow-left"
         size="3x"
+        onClick={
+          typeof history !== "undefined"
+            ? () => history.go(-1)
+            : () => console.log("no history")
+        }
+      /> */}
+      <FaArrowLeft
+        size={50}
+        style={{ cursor: "pointer" }}
         onClick={
           typeof history !== "undefined"
             ? () => history.go(-1)

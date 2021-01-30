@@ -2,11 +2,6 @@ import React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 import Section, { SectionProps } from "./section"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
-import SectionWrapper from "./sectionWrapper"
-import Iframe from "react-iframe"
-import GifPlayer, { GifPlayerProps } from "../gifPlayer"
 import { color } from "../styles"
 
 const gifSrc = require("../../images/gifs/neuralMelodyCapture.gif")

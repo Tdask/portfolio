@@ -20,7 +20,7 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-smoothscroll`,
     `gatsby-plugin-breakpoints`,
-    `gatsby-plugin-fontawesome-css`,
+    // `gatsby-plugin-fontawesome-css`,
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {

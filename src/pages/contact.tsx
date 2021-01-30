@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import EmailForm from "../components/form"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import socialIcons from "../components/socialIcons"
 
 import Layout from "../components/layout"
@@ -21,7 +21,7 @@ const ContactPage = () => (
     >
       {socialIcons.map(icon => (
         <a href={icon.link} target="__blank" style={{ color: "black" }}>
-          <FontAwesomeIcon size="2x" icon={icon.icon} />
+          <icon.icon size={32} />
         </a>
       ))}
     </div>

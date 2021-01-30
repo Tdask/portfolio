@@ -1,11 +1,13 @@
+import { FaInstagram, FaLinkedin, FaGithub, FaTwitter } from "react-icons/fa"
+
 const socialIcons = [
   {
-    icon: ["fab", "linkedin"],
+    icon: FaLinkedin,
     link: "https://www.linkedin.com/in/logan-takahashi/",
   },
-  { icon: ["fab", "github"], link: "https://github.com/Tdask" },
-  { icon: ["fab", "instagram"], link: "https://www.instagram.com/logan_t_/" },
-  { icon: ["fab", "twitter"], link: "https://twitter.com/logan_t_" },
+  { icon: FaGithub, link: "https://github.com/Tdask" },
+  { icon: FaInstagram, link: "https://www.instagram.com/logan_t_/" },
+  { icon: FaTwitter, link: "https://twitter.com/logan_t_" },
 ]
 
 export default socialIcons

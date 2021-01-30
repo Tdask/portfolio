@@ -1,10 +1,11 @@
 import React, { useState, useCallback } from "react"
 import styled from "styled-components"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 // import {
 //   faChevronRight,
 //   faChevronLeft,
 // } from "@fortawesome/free-solid-svg-icons"
+import { FaChevronRight, FaChevronLeft } from "react-icons/fa"
 import { useTransition, animated } from "react-spring"
 
 const arrowStyle = {
@@ -70,11 +71,12 @@ const SlideViewer = ({ slides, breakpoints, ...props }) => {
           cursor: "pointer",
         }}
       >
-        <FontAwesomeIcon
+        {/* <FontAwesomeIcon
           icon="chevron-right"
           size="3x"
           style={{ opacity: 0.6 }}
-        />
+        /> */}
+        <FaChevronRight size={55} style={{ opacity: 0.6 }} />
       </div>
       <div
         onClick={() => {
@@ -89,11 +91,12 @@ const SlideViewer = ({ slides, breakpoints, ...props }) => {
           cursor: "pointer",
         }}
       >
-        <FontAwesomeIcon
+        {/* <FontAwesomeIcon
           icon="chevron-left"
           size="3x"
           style={{ opacity: 0.6 }}
-        />
+        /> */}
+        <FaChevronLeft size={55} style={{ opacity: 0.6 }} />
       </div>
 
       {transitions.map(({ item, props, key }) => {
