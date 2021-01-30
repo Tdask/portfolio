@@ -1,10 +1,3 @@
-// import {
-//   faLinkedin,
-//   faGithub,
-//   faInstagram,
-//   faTwitter,
-// } from "@fortawesome/free-brands-svg-icons"
-
 const socialIcons = [
   {
     icon: ["fab", "linkedin"],
