@@ -1,10 +1,12 @@
-import React from "react"
+import React, { useContext } from "react"
 import styled from "styled-components"
 import SectionWrapper from "../../components/sections/sectionWrapper"
-import Layout from "../../components/layout"
+import Layout, { breakpointContext } from "../../components/layout"
 import SEO from "../../components/seo"
 
 const AboutPage = () => {
+  const result = useContext(breakpointContext)
+  console.log("heya", result)
   return (
     <>
       <Layout>
@@ -148,12 +150,60 @@ const AboutPage = () => {
             </h3>
           </a>
           <h2>Other:</h2>
-          <iframe
-            src="https://player.vimeo.com/video/6821130"
-            width="640"
-            height="432"
-            allow="autoplay; fullscreen; picture-in-picture"
-          />
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            <h3
+              style={{
+                fontStyle: "italic",
+                alignSelf: "flex-start",
+                textAlign: "left",
+                flex: 1,
+              }}
+            >
+              {" "}
+              Undergrowth - installation, 2011
+            </h3>
+            <iframe
+              src="https://player.vimeo.com/video/506191865"
+              width="640"
+              height="360"
+              allow="autoplay; fullscreen; picture-in-picture"
+            />
+
+            <h3
+              style={{
+                fontStyle: "italic",
+                alignSelf: "flex-start",
+                textAlign: "left",
+                flex: 1,
+              }}
+            >
+              {" "}
+              Wrong Setting - video, 2008
+            </h3>
+            <iframe
+              src="https://player.vimeo.com/video/6821130"
+              width="640"
+              height="432"
+              allow="autoplay; fullscreen; picture-in-picture"
+            />
+
+            <h3
+              style={{
+                fontStyle: "italic",
+                alignSelf: "flex-start",
+                textAlign: "left",
+                flex: 1,
+              }}
+            >
+              Pretty Puked - animation, 2007
+            </h3>
+            <iframe
+              width="640"
+              height="360"
+              src="https://www.youtube.com/embed/eutu_Vf_at0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            />
+          </div>
         </div>
       </Layout>
     </>

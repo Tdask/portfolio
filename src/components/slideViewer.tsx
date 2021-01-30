@@ -32,8 +32,8 @@ import { useTransition, animated } from "react-spring"
 //   ),
 // ]
 
-export const makePages = slides => {
-  const pages = slides.map(Slide => {
+export const makeSlides = slides => {
+  const formattedSlides = slides.map(Slide => {
     return ({ style }) => (
       <animated.div
         style={{
@@ -47,10 +47,10 @@ export const makePages = slides => {
       </animated.div>
     )
   })
-  return pages
+  return formattedSlides
 }
 
-const SlideViewer = ({ pages, ...props }) => {
+const SlideViewer = ({ slides, ...props }) => {
   const [index, set] = useState(0)
   const [dir, setDir] = useState(1)
   const onClick = useCallback(() => set(state => (state + 1) % 3), [])
@@ -72,6 +72,7 @@ const SlideViewer = ({ pages, ...props }) => {
         width: 600,
         flexWrap: "nowrap",
         overflow: "hidden",
+        alignSelf: "center",
       }}
       // onClick={onClick}
       {...props}
@@ -125,8 +126,8 @@ const SlideViewer = ({ pages, ...props }) => {
 
       {transitions.map(({ item, props, key }) => {
         console.log("item", item, "props", props, "key", key)
-        const Page = pages[item]
-        return <Page key={key} style={props} />
+        const Slide = slides[item]
+        return <Slide key={key} style={props} />
       })}
     </div>
   )

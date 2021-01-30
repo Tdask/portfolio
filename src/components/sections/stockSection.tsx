@@ -20,6 +20,7 @@ const stockData: SectionProps = {
 
 const StockSection = ({ breakpoints }) => {
   const { md } = breakpoints
+  // const md = false
   return (
     <Section {...stockData} direction={md ? "column" : "row"} showMobile={md} />
   )

@@ -5,12 +5,14 @@
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
-import React from "react"
+import React, { createContext, useContext } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 import { color } from "./styles/color"
 import Header from "./header"
+import { useBreakpoint } from "gatsby-plugin-breakpoints"
+// import { breakpointContext } from "../pages/index"
 import "./layout.css"
 // import "./assets/css/fonts.css"
 import "@fontsource/cousine"
@@ -25,6 +27,17 @@ const StyledLayoutDiv = styled.div`
   flex: 1;
   overflow: hidden;
 `
+
+export const breakpointContext = React.createContext({})
+const BreakPointProvider = ({ children }) => {
+  const breakpoints = useBreakpoint()
+  console.log("breakpoints", breakpoints)
+  return (
+    <breakpointContext.Provider value={{ breakpoints }}>
+      {children}
+    </breakpointContext.Provider>
+  )
+}
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`

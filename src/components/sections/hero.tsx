@@ -1,6 +1,7 @@
-import React, { useRef, useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import styled from "styled-components"
 import { useSpring, animated, useChain } from "react-spring"
+import { useBreakpoint } from "gatsby-plugin-breakpoints"
 import { color } from "../styles"
 import Image from "../image"
 import BackgroundImage from "../backgroundImage"
@@ -58,21 +59,6 @@ const useSlideInFromLeft = ref => {
   })
   return spring
 }
-const useFinalSlideInFromLeft = (ref, setToggle) => {
-  const spring = useSpring({
-    from: {
-      transform: "translateX(-600px)",
-      opacity: 0,
-    },
-    to: {
-      transform: "translateX(0)",
-      opacity: 1,
-    },
-    onRest: () => setToggle(true),
-    ref,
-  })
-  return spring
-}
 
 const useSlideUp = ref => {
   const spring = useSpring({
@@ -118,14 +104,63 @@ const useTextLighten = (ref, toggle) => {
   return spring
 }
 
-const Hero = () => {
+const getCurrentSize = breakpoints => {
+  const { xs, sm, md, l } = breakpoints
+  if (!l) {
+    return "xl"
+  } else if (l && !md) {
+    return "l"
+  } else if (md && !sm) {
+    return "md"
+  } else {
+    if (sm && !xs) {
+      return "sm"
+    } else if (xs) {
+      return "xs"
+    }
+  }
+}
+
+const fontSizes = {
+  xl: 60,
+  l: 60,
+  md: 50,
+  sm: 35,
+  xs: 30,
+}
+
+const Hero = ({ breakpoints }) => {
+  // const breakpoints = useBreakpoint()
+  const currSize = getCurrentSize(breakpoints)
+  const fontSize = fontSizes[currSize]
   const [toggle, setToggle] = useState(false)
-  const titleRef = useRef()
+  const [rerun, setRerun] = useState(false)
+  const [titleRef, setTitleRef] = useState(useRef())
+  // const titleRef = useRef()
   const textRef = useRef()
   const text2Ref = useRef()
   const arrowRef = useRef()
   const nameRef = useRef()
   const backgroundRef = useRef()
+  useEffect(() => {
+    console.log("mounted", titleRef)
+    setRerun(true)
+  }, [])
+  const useFinalSlideInFromLeft = (ref, setToggle) => {
+    const spring = useSpring({
+      from: {
+        transform: "translateX(-600px)",
+        opacity: 0,
+      },
+      to: {
+        transform: "translateX(0)",
+        opacity: 1,
+      },
+      onRest: () => setToggle(true),
+      ref,
+    })
+    return spring
+  }
 
   const nameStyle = useColorChange(nameRef, color.turquoise)
 
@@ -151,7 +186,16 @@ const Hero = () => {
 
   // const text2LightenAnimation = useTextLighten(text2Ref, toggle)
 
-  useChain([titleRef, textRef, nameRef, text2Ref, arrowRef])
+  useChain([
+    { current: titleRef.current },
+    { current: textRef.current },
+    { current: nameRef.current },
+    { current: text2Ref.current },
+    { current: arrowRef.current },
+  ])
+  // useChain([titleRef, textRef, nameRef, text2Ref, arrowRef])
+
+  console.log("toggler", toggle, "titleRef check", titleRef)
   return (
     <>
       <HeroSectionWrapper textAlign="left" direction="column">
@@ -168,7 +212,7 @@ const Hero = () => {
           <animated.h1
             style={{
               ...textStyle,
-              fontSize: 60,
+              fontSize: fontSize,
               display: "flex",
               marginBottom: 0,
               ...text1LightenAnimation,
@@ -180,7 +224,7 @@ const Hero = () => {
           <animated.h1
             style={{
               ...text2Style,
-              fontSize: 60,
+              fontSize: fontSize,
               display: "flex",
               ...text1LightenAnimation,
             }}
