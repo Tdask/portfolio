@@ -1,12 +1,19 @@
 import React, { useContext } from "react"
 import styled from "styled-components"
+import { useBreakpoint } from "gatsby-plugin-breakpoints"
 import SectionWrapper from "../../components/sections/sectionWrapper"
-import Layout, { breakpointContext } from "../../components/layout"
+import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 
+const StyledH3 = styled.h3`
+  font-style: italic;
+  align-self: flex-start;
+  text-align: left;
+  flex: 1;
+`
+
 const AboutPage = () => {
-  const result = useContext(breakpointContext)
-  console.log("heya", result)
+  const breakpoints = useBreakpoint()
   return (
     <>
       <Layout>
@@ -35,66 +42,30 @@ const AboutPage = () => {
           </p>
           <h2>Some music stuff I have done:</h2>
           <div style={{ display: "flex", flexDirection: "column" }}>
-            <div
-              style={
-                {
-                  // display: "flex",
-                  // flex: 1,
-                  // justifyContent: "space-around",
-                  // alignItems: "center",
-                }
-              }
-            >
-              <h3
-                style={{
-                  fontStyle: "italic",
-                  alignSelf: "flex-start",
-                  textAlign: "left",
-                  flex: 1,
-                }}
-              >
-                DJ set on Lot Radio, Oct 2020
-              </h3>
+            <div>
+              <StyledH3>DJ set on Lot Radio, Oct 2020</StyledH3>
               <iframe
-                width="50%"
+                width={breakpoints.md ? "100%" : "50%"}
                 // height="300"
                 scrolling="no"
                 allow="autoplay"
                 src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/905586724&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
               />
             </div>
-            <h3
-              style={{
-                fontStyle: "italic",
-                alignSelf: "flex-start",
-                textAlign: "left",
-                flex: 1,
-              }}
-            >
-              {" "}
-              live set at MoMA PS1 Warm-Up, 2018
-            </h3>
+            <StyledH3> live set at MoMA PS1 Warm-Up, 2018</StyledH3>
             <iframe
-              width="50%"
+              width={breakpoints.md ? "100%" : "50%"}
               //  height="300"
               scrolling="no"
               allow="autoplay"
               src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/495206472&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
             />
 
-            <h3
-              style={{
-                fontStyle: "italic",
-                alignSelf: "flex-start",
-                textAlign: "left",
-                flex: 1,
-              }}
-            >
-              {" "}
-              co-composed music for Opening Ceremony runway show, 2016{" "}
-            </h3>
+            <StyledH3>
+              co-composed music for Opening Ceremony runway show, 2016
+            </StyledH3>
             <iframe
-              width="50%"
+              width={breakpoints.md ? "100%" : "50%"}
               // height="300"
               scrolling="no"
               allow="autoplay"
@@ -102,21 +73,11 @@ const AboutPage = () => {
             />
           </div>
 
-          <h3
-            style={{
-              fontStyle: "italic",
-              alignSelf: "flex-start",
-              textAlign: "left",
-              flex: 1,
-            }}
-          >
-            {" "}
-            REKR music video, 2016
-          </h3>
+          <StyledH3> REKR music video, 2016</StyledH3>
           <iframe
             src="https://player.vimeo.com/video/164491913"
-            width="640"
-            height="360"
+            width={breakpoints.sm ? "500" : "640"}
+            height={breakpoints.sm ? "281" : "360"}
             // frameborder="0"
             allow="autoplay; fullscreen; picture-in-picture"
             // allowfullscreen
@@ -126,80 +87,37 @@ const AboutPage = () => {
             href="https://logan-takahashi.medium.com/how-i-made-a-neural-melody-maker-with-magenta-js-cbeed2740b2a"
             target="_blank"
           >
-            <h3
-              style={{
-                fontStyle: "italic",
-                alignSelf: "flex-start",
-                textAlign: "left",
-                flex: 1,
-              }}
-            >
+            <StyledH3>
               How I made a Neural Melody Maker with Magenta.js, Medium, 2019
-            </h3>
+            </StyledH3>
           </a>
           <a href="https://www.vice.com/en/article/9avndy/teengirl-fantasy-ryuichi-sakamoto-releases">
-            <h3
-              style={{
-                fontStyle: "italic",
-                alignSelf: "flex-start",
-                textAlign: "left",
-                flex: 1,
-              }}
-            >
+            <StyledH3>
               Ryuichi Sakamoto's Most Influential Releases, Noisey, 2016
-            </h3>
+            </StyledH3>
           </a>
           <h2>Other:</h2>
           <div style={{ display: "flex", flexDirection: "column" }}>
-            <h3
-              style={{
-                fontStyle: "italic",
-                alignSelf: "flex-start",
-                textAlign: "left",
-                flex: 1,
-              }}
-            >
-              {" "}
-              Undergrowth - installation, 2011
-            </h3>
+            <StyledH3> Undergrowth - installation, 2011</StyledH3>
             <iframe
               src="https://player.vimeo.com/video/506191865"
-              width="640"
-              height="360"
+              width={breakpoints.sm ? "500" : "640"}
+              height={breakpoints.sm ? "281" : "360"}
               allow="autoplay; fullscreen; picture-in-picture"
             />
 
-            <h3
-              style={{
-                fontStyle: "italic",
-                alignSelf: "flex-start",
-                textAlign: "left",
-                flex: 1,
-              }}
-            >
-              {" "}
-              Wrong Setting - video, 2008
-            </h3>
+            <StyledH3> Wrong Setting - video, 2008</StyledH3>
             <iframe
               src="https://player.vimeo.com/video/6821130"
-              width="640"
-              height="432"
+              width={breakpoints.sm ? "500" : "640"}
+              height={breakpoints.sm ? "338" : "432"}
               allow="autoplay; fullscreen; picture-in-picture"
             />
 
-            <h3
-              style={{
-                fontStyle: "italic",
-                alignSelf: "flex-start",
-                textAlign: "left",
-                flex: 1,
-              }}
-            >
-              Pretty Puked - animation, 2007
-            </h3>
+            <StyledH3>Pretty Puked - animation, 2007</StyledH3>
             <iframe
-              width="640"
-              height="360"
+              width={breakpoints.sm ? "500" : "640"}
+              height={breakpoints.sm ? "281" : "360"}
               src="https://www.youtube.com/embed/eutu_Vf_at0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             />

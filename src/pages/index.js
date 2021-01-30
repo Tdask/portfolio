@@ -13,105 +13,9 @@ import Scroll from "../components/scroll"
 import SEO from "../components/seo"
 import MelodySection from "../components/sections/melodyMakerSection"
 import StockSection from "../components/sections/stockSection"
-import { breakpointContext } from "../components/layout"
-
-const dummyStyles = {
-  background: "green",
-}
-
-// const App = () => {
-//   // const breakpoints = useBreakpoint()
-//   const breakpoints = useContext(breakpointContext)
-//   console.log("yo", breakpoints)
-//   return (
-//     <Layout>
-//       <SEO title="Home" />
-//       <Hero breakpoints={breakpoints} />
-//       <VisibilitySensor partialVisibility once>
-//         {({ isVisible }) => (
-//           <Spring
-//             delay={400}
-//             to={{
-//               opacity: isVisible ? 1 : 0,
-//               transform: isVisible ? "translateX(0)" : "translateX(400px)",
-//             }}
-//           >
-//             {({ opacity, transform }) => {
-//               return (
-//                 <div style={{ ...dummyStyles, opacity, transform }}>
-//                   <ChromaSection breakpoints={breakpoints} />
-//                 </div>
-//               )
-//             }}
-//           </Spring>
-//         )}
-//       </VisibilitySensor>
-//       <VisibilitySensor partialVisibility once>
-//         {({ isVisible }) => (
-//           <Spring
-//             delay={400}
-//             to={{
-//               opacity: isVisible ? 1 : 0,
-//               transform: isVisible ? "translateX(0)" : "translateX(-400px)",
-//             }}
-//           >
-//             {({ opacity, transform }) => {
-//               return (
-//                 <div style={{ opacity, transform }}>
-//                   <TokenTaxSection breakpoints={breakpoints} />
-//                 </div>
-//               )
-//             }}
-//           </Spring>
-//         )}
-//       </VisibilitySensor>
-
-//       <VisibilitySensor partialVisibility once>
-//         {({ isVisible }) => (
-//           <Spring
-//             delay={200}
-//             to={{
-//               opacity: isVisible ? 1 : 0,
-//               // transform: isVisible ? "translateX(0)" : "translateX(200px)",
-//             }}
-//           >
-//             {({ opacity, transform }) => {
-//               return (
-//                 <div style={{ opacity, transform }}>
-//                   <MelodySection breakpoints={breakpoints} />
-//                 </div>
-//               )
-//             }}
-//           </Spring>
-//         )}
-//       </VisibilitySensor>
-
-//       <VisibilitySensor partialVisibility once>
-//         {({ isVisible }) => (
-//           <Spring
-//             delay={200}
-//             to={{
-//               opacity: isVisible ? 1 : 0,
-//               // transform: isVisible ? "translateX(0)" : "translateX(200px)",
-//             }}
-//           >
-//             {({ opacity, transform }) => {
-//               return (
-//                 <div style={{ opacity, transform }}>
-//                   <StockSection breakpoints={breakpoints} />
-//                 </div>
-//               )
-//             }}
-//           </Spring>
-//         )}
-//       </VisibilitySensor>
-//     </Layout>
-//   )
-// }
 
 const IndexPage = () => {
   const breakpoints = useBreakpoint()
-  // console.log("breakpoints", breakpoints)
   return (
     <Layout>
       <SEO title="Home" />
@@ -127,7 +31,7 @@ const IndexPage = () => {
           >
             {({ opacity, transform }) => {
               return (
-                <div style={{ ...dummyStyles, opacity, transform }}>
+                <div style={{ opacity, transform }}>
                   <ChromaSection breakpoints={breakpoints} />
                 </div>
               )

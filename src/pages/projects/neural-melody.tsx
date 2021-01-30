@@ -30,11 +30,10 @@ const MelodyPage = () => {
           <div style={{ textAlign: "left" }}>
             <h2>Neural Melody Maker, spring 2019</h2>
             <p>
-              Built as part of a four-day hackathon, this project was my
-              introduction to the possiblities of machine learning in the
-              generation of musical sequences. The Neural Melody Maker uses a
-              Recurrent Neural Network (RNN) to generate new variations of a
-              melody.
+              Built as part of a hackathon, this project was my introduction to
+              the possiblities of machine learning in the generation of musical
+              sequences. The Neural Melody Maker uses a Recurrent Neural Network
+              (RNN) to generate new variations of a melody.
             </p>
             <p>
               A user can input a seed melody by selecting notes and then

@@ -6,31 +6,14 @@ import {
   faChevronLeft,
 } from "@fortawesome/free-solid-svg-icons"
 import { useTransition, animated } from "react-spring"
-// import { Slide1, Slide2, Slide3 } from "../components/chromaSlides"
 
-// const pages = [
-//   ({ style }) => (
-//     <animated.div
-//       style={{ ...style, position: "absolute", width: "100%", height: "100%" }}
-//     >
-//       <Slide1 />
-//     </animated.div>
-//   ),
-//   ({ style }) => (
-//     <animated.div
-//       style={{ ...style, position: "absolute", width: "100%", height: "100%" }}
-//     >
-//       <Slide2 />
-//     </animated.div>
-//   ),
-//   ({ style }) => (
-//     <animated.div
-//       style={{ ...style, position: "absolute", width: "100%", height: "100%" }}
-//     >
-//       <Slide3 />
-//     </animated.div>
-//   ),
-// ]
+const arrowStyle = {
+  position: "absolute",
+  left: 0,
+  top: "50%",
+  zIndex: 3,
+  cursor: "pointer",
+}
 
 export const makeSlides = slides => {
   const formattedSlides = slides.map(Slide => {
@@ -50,7 +33,7 @@ export const makeSlides = slides => {
   return formattedSlides
 }
 
-const SlideViewer = ({ slides, ...props }) => {
+const SlideViewer = ({ slides, breakpoints, ...props }) => {
   const [index, set] = useState(0)
   const [dir, setDir] = useState(1)
   const onClick = useCallback(() => set(state => (state + 1) % 3), [])
@@ -63,18 +46,15 @@ const SlideViewer = ({ slides, ...props }) => {
 
   return (
     <div
-      // className="simple-trans-main"
       style={{
         position: "relative",
-        // display: "flex",
-        // flexDirection: "row",
-        height: 400,
-        width: 600,
+        flex: 1,
+        height: breakpoints.sm ? 333 : 400,
+        width: breakpoints.sm ? 500 : 600,
         flexWrap: "nowrap",
         overflow: "hidden",
-        alignSelf: "center",
+        justifyContent: "auto",
       }}
-      // onClick={onClick}
       {...props}
     >
       <div
@@ -88,12 +68,6 @@ const SlideViewer = ({ slides, ...props }) => {
           top: "50%",
           zIndex: 3,
           cursor: "pointer",
-          // width: "50%",
-          // marginRight: "50%",
-          // paddingLeft: "50%",
-          // paddingBottom: "50%",
-          // paddingTop: "50%",
-          // height: "100%",
         }}
       >
         <FontAwesomeIcon
@@ -113,8 +87,6 @@ const SlideViewer = ({ slides, ...props }) => {
           top: "50%",
           zIndex: 3,
           cursor: "pointer",
-          // paddingRight: "50%",
-          // paddingBottom: "50%",
         }}
       >
         <FontAwesomeIcon
@@ -125,7 +97,6 @@ const SlideViewer = ({ slides, ...props }) => {
       </div>
 
       {transitions.map(({ item, props, key }) => {
-        console.log("item", item, "props", props, "key", key)
         const Slide = slides[item]
         return <Slide key={key} style={props} />
       })}

@@ -8,17 +8,19 @@
 import React, { createContext, useContext } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
 import styled from "styled-components"
 import { color } from "./styles/color"
 import Header from "./header"
-import { useBreakpoint } from "gatsby-plugin-breakpoints"
-// import { breakpointContext } from "../pages/index"
 import "./layout.css"
 // import "./assets/css/fonts.css"
 import "@fontsource/cousine"
 import "@fontsource/ubuntu-mono"
 import "@fontsource/open-sans"
 import "@fontsource/press-start-2p"
+
+const zenSrc = require("../images/zenAnsi.png")
+
 const StyledLayoutDiv = styled.div`
   padding: 1rem 1.0875rem 1.45rem;
   display: flex;
@@ -26,18 +28,8 @@ const StyledLayoutDiv = styled.div`
   align-items: center;
   flex: 1;
   overflow: hidden;
+  // background-image: url(https://pbs.twimg.com/media/Es5iQO0W4AAbGeU?format=png&name=large);
 `
-
-export const breakpointContext = React.createContext({})
-const BreakPointProvider = ({ children }) => {
-  const breakpoints = useBreakpoint()
-  console.log("breakpoints", breakpoints)
-  return (
-    <breakpointContext.Provider value={{ breakpoints }}>
-      {children}
-    </breakpointContext.Provider>
-  )
-}
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -52,27 +44,24 @@ const Layout = ({ children }) => {
 
   return (
     <>
+      {/* {data.zenImage.childImageSharp.fixed ? (
+        <Img fixed={data.zenImage.childImageSharp.fixed} />
+      ) : (
+        "no data"
+      )} */}
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <StyledLayoutDiv>
-        {/* <div
-        style={{
-          background: "orange",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          // justifyContent: "center",
-          // flexDirection: "column",
-        }}
-      > */}
         <main>
           {children}
-          {/* <footer style={{
-          marginTop: `2rem`
-        }}>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer> */}
+          <footer
+            style={{
+              marginTop: `2rem`,
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            © {new Date().getFullYear()} Logan Takahashi
+          </footer>
         </main>
         {/* </div> */}
       </StyledLayoutDiv>

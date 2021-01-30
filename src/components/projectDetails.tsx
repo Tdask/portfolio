@@ -21,6 +21,17 @@ const StyledLI = styled.li`
   padding-right: 2rem;
 `
 
+const StyledSlideContainer = styled.div`
+  display: flex;
+  justify-content: center;
+`
+const StyledDescriptionUL = styled.ul`
+text-align: left,
+font-style: italic,
+font-size: 17,
+margin-top: 1.45rem,
+`
+
 export type ProjectDetailsProps = {
   technologies: Array<string>
   slides: Array<ReactNode>
@@ -39,40 +50,39 @@ const ProjectDetails = ({
   challengDescription,
 }: ProjectDetailsProps) => {
   const breakpoints = useBreakpoint()
-  console.log("bp in projectD", breakpoints)
 
   return (
     <Layout>
       <SectionWrapper direction={breakpoints.md ? "column" : null}>
-        <div style={{ flex: 1, alignSelf: "flex-start" }}>
+        <div
+          style={{
+            flex: 1,
+            alignSelf: breakpoints.md ? "center" : "flex-start",
+          }}
+        >
           <h2>{title}</h2>
-          <SlideViewer slides={slides} />
+          <StyledSlideContainer>
+            <SlideViewer slides={slides} breakpoints={breakpoints} />
+          </StyledSlideContainer>
           {challengDescription ? (
-            <>
+            <div style={{ paddingTop: "1rem" }}>
               <h2>Technologies used:</h2>
               <StyledUL>
                 {technologies.map(item => (
                   <StyledLI key={item}>{item}</StyledLI>
                 ))}
               </StyledUL>
-            </>
+            </div>
           ) : null}
         </div>
         <StyledTextContainer>
           <p>{description}</p>
           {descriptionList ? (
-            <ul
-              style={{
-                textAlign: "left",
-                fontStyle: "italic",
-                fontSize: 17,
-                marginTop: "1.45rem",
-              }}
-            >
+            <StyledDescriptionUL>
               {descriptionList.map((item, i) => (
                 <li key={i}>{item}</li>
               ))}
-            </ul>
+            </StyledDescriptionUL>
           ) : null}
 
           {challengDescription ? (
