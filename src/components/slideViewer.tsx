@@ -5,7 +5,8 @@ import styled from "styled-components"
 //   faChevronRight,
 //   faChevronLeft,
 // } from "@fortawesome/free-solid-svg-icons"
-import { FaChevronRight, FaChevronLeft } from "react-icons/fa"
+// import { FaChevronRight, FaChevronLeft } from "react-icons/fa"
+import { FiChevronRight, FiChevronLeft } from "react-icons/fi"
 import { useTransition, animated } from "react-spring"
 
 const arrowStyle = {
@@ -76,7 +77,7 @@ const SlideViewer = ({ slides, breakpoints, ...props }) => {
           size="3x"
           style={{ opacity: 0.6 }}
         /> */}
-        <FaChevronRight size={55} style={{ opacity: 0.6 }} />
+        <FiChevronRight size={55} style={{ opacity: 0.6 }} />
       </div>
       <div
         onClick={() => {
@@ -96,7 +97,7 @@ const SlideViewer = ({ slides, breakpoints, ...props }) => {
           size="3x"
           style={{ opacity: 0.6 }}
         /> */}
-        <FaChevronLeft size={55} style={{ opacity: 0.6 }} />
+        <FiChevronLeft size={55} style={{ opacity: 0.6 }} />
       </div>
 
       {transitions.map(({ item, props, key }) => {

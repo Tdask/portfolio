@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { FaArrowLeft } from "react-icons/fa"
+import { FiArrowLeft } from "react-icons/fi"
 // import { faArrowLeft } from "@fortawesome/free-solid-svg-icons"
 
 const BackWrapper = styled.div`
@@ -25,7 +25,7 @@ const Back = () => {
             : () => console.log("no history")
         }
       /> */}
-      <FaArrowLeft
+      <FiArrowLeft
         size={50}
         style={{ cursor: "pointer" }}
         onClick={
