@@ -18,23 +18,23 @@ import "@fontsource/cousine"
 import "@fontsource/ubuntu-mono"
 import "@fontsource/open-sans"
 import "@fontsource/press-start-2p"
-import { library } from "@fortawesome/fontawesome-svg-core"
-import { fab } from "@fortawesome/free-brands-svg-icons"
-import {
-  faChevronDown,
-  faChevronRight,
-  faChevronLeft,
-  faArrowRight,
-  faArrowLeft,
-} from "@fortawesome/free-solid-svg-icons"
-library.add(
-  fab,
-  faChevronDown,
-  faChevronRight,
-  faChevronLeft,
-  faArrowRight,
-  faArrowLeft
-)
+// import { library } from "@fortawesome/fontawesome-svg-core"
+// import { fab } from "@fortawesome/free-brands-svg-icons"
+// import {
+//   faChevronDown,
+//   faChevronRight,
+//   faChevronLeft,
+//   faArrowRight,
+//   faArrowLeft,
+// } from "@fortawesome/free-solid-svg-icons"
+// library.add(
+//   fab,
+//   faChevronDown,
+//   faChevronRight,
+//   faChevronLeft,
+//   faArrowRight,
+//   faArrowLeft
+// )
 
 const zenSrc = require("../images/zenAnsi.png")
 
