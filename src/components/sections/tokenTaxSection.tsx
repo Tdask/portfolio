@@ -4,7 +4,7 @@ import Section, { SectionProps } from "./section"
 import { color } from "../../components/styles"
 import { GifPlayerProps } from "../gifPlayer"
 
-const stillSrc: GifPlayerProps["stillSrc"] = require("../../images/TTstill.png")
+const stillSrc: GifPlayerProps["stillSrc"] = require("../../images/TTStill.png")
 const gifSrc: GifPlayerProps["gifSrc"] = require("../../images/gifs/TTcapture.gif")
 
 const tokenTaxData: SectionProps = {
