@@ -20,8 +20,8 @@ const AboutPage = () => {
         <div
           style={{
             // padding: "3rem 1.0875rem 3.45rem",
-            paddingLeft: breakpoints.sm ? "1rem" : null,
-            paddingRight: breakpoints.sm ? "1rem" : null,
+            paddingLeft: breakpoints.sm ? "1rem" : "2rem",
+            paddingRight: breakpoints.sm ? "1rem" : "2rem",
             maxWidth: breakpoints.sm ? 500 : null,
             flex: 1,
           }}

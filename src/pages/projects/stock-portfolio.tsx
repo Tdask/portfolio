@@ -24,7 +24,7 @@ const stockProjectData = {
     {
       message: "check it out on",
       linkText: "github",
-      link: '"https://github.com/Tdask/TTP-FS"',
+      link: "https://github.com/Tdask/TTP-FS",
     },
   ],
 }
