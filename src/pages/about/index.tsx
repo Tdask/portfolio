@@ -17,7 +17,15 @@ const AboutPage = () => {
   return (
     <>
       <Layout>
-        <div style={{ padding: "3rem 1.0875rem 3.45rem" }}>
+        <div
+          style={{
+            // padding: "3rem 1.0875rem 3.45rem",
+            paddingLeft: breakpoints.sm ? "1rem" : null,
+            paddingRight: breakpoints.sm ? "1rem" : null,
+            maxWidth: breakpoints.sm ? 500 : null,
+            flex: 1,
+          }}
+        >
           <h2>About me</h2>
           <p>
             I grew up playing violin and have a degree in Technology in Music
@@ -25,7 +33,7 @@ const AboutPage = () => {
             processing and audio manipulation, production, and composition. My
             first experiences with coding were for creative projects including
             installations using Max/MSP/Jitter, designing circuits and programs
-            from arduinos, and hacking video files via datamoshing.
+            from arduinos, and hacking video codecs.
           </p>
           <p>
             I have released music on labels including{" "}
@@ -76,8 +84,10 @@ const AboutPage = () => {
           <StyledH3> REKR music video, 2016</StyledH3>
           <iframe
             src="https://player.vimeo.com/video/164491913"
-            width={breakpoints.sm ? "500" : "640"}
+            // width={breakpoints.sm ? "500" : "640"}
+            width={breakpoints.md ? "100%" : "50%"}
             height={breakpoints.sm ? "281" : "360"}
+            // height="100%"
             // frameborder="0"
             allow="autoplay; fullscreen; picture-in-picture"
             // allowfullscreen
@@ -101,25 +111,32 @@ const AboutPage = () => {
             <StyledH3> Undergrowth - installation, 2011</StyledH3>
             <iframe
               src="https://player.vimeo.com/video/506191865"
-              width={breakpoints.sm ? "500" : "640"}
+              // width={breakpoints.sm ? "500" : "640"}
+              width={breakpoints.md ? "100%" : "50%"}
               height={breakpoints.sm ? "281" : "360"}
               allow="autoplay; fullscreen; picture-in-picture"
+              style={{ borderWidth: 0 }}
             />
 
             <StyledH3> Wrong Setting - video, 2008</StyledH3>
             <iframe
               src="https://player.vimeo.com/video/6821130"
-              width={breakpoints.sm ? "500" : "640"}
+              // width={breakpoints.sm ? "500" : "640"}
+              width={breakpoints.md ? "100%" : "50%"}
               height={breakpoints.sm ? "338" : "432"}
+              // height={breakpoints.sm ? "281" : "340"}
               allow="autoplay; fullscreen; picture-in-picture"
+              style={{ borderWidth: 0 }}
             />
 
             <StyledH3>Pretty Puked - animation, 2007</StyledH3>
             <iframe
-              width={breakpoints.sm ? "500" : "640"}
+              // width={breakpoints.sm ? "500" : "640"}
+              width={breakpoints.md ? "100%" : "50%"}
               height={breakpoints.sm ? "281" : "360"}
               src="https://www.youtube.com/embed/eutu_Vf_at0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              style={{ borderWidth: 0 }}
             />
           </div>
         </div>

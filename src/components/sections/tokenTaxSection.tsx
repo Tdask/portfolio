@@ -1,5 +1,4 @@
 import React from "react"
-import { useStaticQuery, graphql, Link } from "gatsby"
 import Section, { SectionProps } from "./section"
 import { color } from "../../components/styles"
 import { GifPlayerProps } from "../gifPlayer"
@@ -9,7 +8,7 @@ const gifSrc: GifPlayerProps["gifSrc"] = require("../../images/gifs/TTcapture.gi
 
 const tokenTaxData: SectionProps = {
   id: "tokenTax",
-  background: color.silver,
+  background: color.gradient3Rev,
   title: "Token Tax",
   description:
     "I did a variety of front-end tasks for the marketing site of this tax support start-up.",

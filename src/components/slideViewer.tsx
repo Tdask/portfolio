@@ -1,13 +1,8 @@
 import React, { useState, useCallback } from "react"
 import styled from "styled-components"
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-// import {
-//   faChevronRight,
-//   faChevronLeft,
-// } from "@fortawesome/free-solid-svg-icons"
-// import { FaChevronRight, FaChevronLeft } from "react-icons/fa"
 import { FiChevronRight, FiChevronLeft } from "react-icons/fi"
 import { useTransition, animated } from "react-spring"
+import { getCurrentSize } from "../components/helpers"
 
 const arrowStyle = {
   position: "absolute",
@@ -35,7 +30,16 @@ export const makeSlides = slides => {
   return formattedSlides
 }
 
+const dimensions = {
+  xs: [300, 200],
+  sm: [500, 333],
+  md: [600, 400],
+  l: [600, 400],
+  xl: [600, 400],
+}
+
 const SlideViewer = ({ slides, breakpoints, ...props }) => {
+  const [width, height] = dimensions[getCurrentSize(breakpoints)]
   const [index, set] = useState(0)
   const [dir, setDir] = useState(1)
   const onClick = useCallback(() => set(state => (state + 1) % 3), [])
@@ -51,8 +55,10 @@ const SlideViewer = ({ slides, breakpoints, ...props }) => {
       style={{
         position: "relative",
         flex: 1,
-        height: breakpoints.sm ? 333 : 400,
-        width: breakpoints.sm ? 500 : 600,
+        // width: breakpoints.sm ? 500 : 600,
+        // height: breakpoints.sm ? 333 : 400,
+        width: width,
+        height: height,
         flexWrap: "nowrap",
         overflow: "hidden",
         justifyContent: "auto",
@@ -72,11 +78,6 @@ const SlideViewer = ({ slides, breakpoints, ...props }) => {
           cursor: "pointer",
         }}
       >
-        {/* <FontAwesomeIcon
-          icon="chevron-right"
-          size="3x"
-          style={{ opacity: 0.6 }}
-        /> */}
         <FiChevronRight size={55} style={{ opacity: 0.6 }} />
       </div>
       <div
@@ -92,11 +93,6 @@ const SlideViewer = ({ slides, breakpoints, ...props }) => {
           cursor: "pointer",
         }}
       >
-        {/* <FontAwesomeIcon
-          icon="chevron-left"
-          size="3x"
-          style={{ opacity: 0.6 }}
-        /> */}
         <FiChevronLeft size={55} style={{ opacity: 0.6 }} />
       </div>
 

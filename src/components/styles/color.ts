@@ -6,6 +6,8 @@ export const  color = {
   midnight: '#140d4fff',
   gradient1: 'linear-gradient(0deg, #1060808, #fcbd03ff, #b5b0b8ff, #ffffffff, #140d4fff)',
   gradient2: 'linear-gradient(90deg, hsla(265, 53%, 29%, 1) 0%, hsla(24, 93%, 73%, 1) 100%)',
+  gradient3: 'linear-gradient(90deg, hsla(61, 80%, 76%, 0.6) 0%, hsla(278, 5%, 71%, 0.6) 100%)',
+  gradient3Rev: 'linear-gradient(90deg, hsla(278, 5%, 71%, 0.6) 0%, hsla(61, 80%, 76%, 0.6) 100%)',
   xiketic: '#1c0b19ff',
   eggShell: '#f3e5c2',
   eerieBlack: '#181a19',

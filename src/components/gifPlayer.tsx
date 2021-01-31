@@ -43,27 +43,9 @@ const StyledGifButtonP = styled.p`
 const GifButton = ({ isToggled, color }: GifButtonProps) => {
   return (
     <>
-      {/* <p
-        style={{
-          color: "orange",
-          background: isToggled ? "purple" : "teal",
-          position: "absolute",
-          top: "50%",
-          left: "50%",
-          // bottom: "100%",
-          fontFamily: "sans-serif",
-          transform: "translate(-50%, -50%)",
-          border: "3px dotted black",
-          borderRadius: "50%",
-          cursor: "pointer",
-          padding: 5,
-          // animation: isToggled ? `${shrinkAnimation} 1s linear forward` : null,
-        }}
-      > */}
       <StyledGifButtonP color={color} isToggled={isToggled}>
         GIF
       </StyledGifButtonP>
-      {/* </p> */}
     </>
   )
 }

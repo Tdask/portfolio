@@ -5,12 +5,15 @@ import Layout from "./layout"
 import SectionWrapper from "./sections/sectionWrapper"
 import SlideViewer, { makeSlides } from "./slideViewer"
 import Back from "./backButton"
+import ExternalLink, { LinkProps } from "./externalLink"
 
 const StyledTextContainer = styled.div`
   display: block;
   flex: 1;
   text-align: left;
-  padding: 2rem;
+  padding: ${props =>
+    props.breakpoints.md ? `2rem 0rem 0rem 0rem ` : `0rem 0rem 0rem 2rem`};
+  background: ${props => props.background || null};
 `
 
 const StyledUL = styled.ul`
@@ -24,12 +27,13 @@ const StyledLI = styled.li`
 const StyledSlideContainer = styled.div`
   display: flex;
   justify-content: center;
+  flex: 1;
 `
 const StyledDescriptionUL = styled.ul`
-text-align: left,
-font-style: italic,
-font-size: 17,
-margin-top: 1.45rem,
+  text-align: left,
+  font-style: italic,
+  font-size: 17,
+  margin-top: 1.45rem,
 `
 
 export type ProjectDetailsProps = {
@@ -39,6 +43,7 @@ export type ProjectDetailsProps = {
   description: string
   descriptionList?: Array<string>
   challengDescription?: string
+  links?: Array<LinkProps>
 }
 
 const ProjectDetails = ({
@@ -48,6 +53,7 @@ const ProjectDetails = ({
   description,
   descriptionList,
   challengDescription,
+  links,
 }: ProjectDetailsProps) => {
   const breakpoints = useBreakpoint()
 
@@ -75,7 +81,7 @@ const ProjectDetails = ({
             </div>
           ) : null}
         </div>
-        <StyledTextContainer>
+        <StyledTextContainer breakpoints={breakpoints}>
           <p>{description}</p>
           {descriptionList ? (
             <StyledDescriptionUL>
@@ -97,6 +103,24 @@ const ProjectDetails = ({
               </StyledUL>
             </>
           )}
+          <div
+            style={{
+              display: "flex",
+              // justifyContent: "space-evenly",
+              flexWrap: "wrap",
+            }}
+          >
+            {links
+              ? links.map((link, i) => (
+                  <ExternalLink
+                    key={i}
+                    message={link.message}
+                    linkText={link.linkText}
+                    link={link.link}
+                  />
+                ))
+              : null}
+          </div>
         </StyledTextContainer>
       </SectionWrapper>
       <SectionWrapper>

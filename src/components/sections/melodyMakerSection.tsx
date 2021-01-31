@@ -1,6 +1,4 @@
 import React from "react"
-import { useStaticQuery, graphql, Link } from "gatsby"
-import Img from "gatsby-image"
 import Section, { SectionProps } from "./section"
 import { color } from "../styles"
 
@@ -9,7 +7,7 @@ const stillSrc = require("../../images/nmmStill.png")
 
 const melodyData: SectionProps = {
   id: "neuralMelody",
-  background: color.eggShell,
+  background: color.gradient3,
   title: "Neural Melody Maker",
   description:
     "A fun tool that allows users to generate and progress melodies using a recurrent neural network. Built with Magenta JS.",
@@ -24,7 +22,6 @@ const melodyData: SectionProps = {
 }
 const MelodySection = ({ breakpoints }) => {
   const { md } = breakpoints
-  // const md = false
   return (
     <Section
       {...melodyData}

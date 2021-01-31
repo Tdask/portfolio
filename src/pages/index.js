@@ -1,15 +1,12 @@
-import React, { useContext } from "react"
-import { Link } from "gatsby"
-import scrollTo from "gatsby-plugin-smoothscroll"
+import React from "react"
 import { useBreakpoint } from "gatsby-plugin-breakpoints"
 import VisibilitySensor from "../components/visibilitySensor"
-import { useSpring, animated, useChain } from "react-spring"
+// import { useSpring, animated, useChain } from "react-spring"
 import { Spring } from "react-spring/renderprops"
 import Hero from "../components/sections/hero"
 import TokenTaxSection from "../components/sections/tokenTaxSection"
 import ChromaSection from "../components/sections/chromaSection"
 import Layout from "../components/layout"
-import Scroll from "../components/scroll"
 import SEO from "../components/seo"
 import MelodySection from "../components/sections/melodyMakerSection"
 import StockSection from "../components/sections/stockSection"
@@ -26,7 +23,7 @@ const IndexPage = () => {
             delay={400}
             to={{
               opacity: isVisible ? 1 : 0,
-              transform: isVisible ? "translateX(0)" : "translateX(400px)",
+              transform: isVisible ? "translateX(0)" : "translateX(200px)",
             }}
           >
             {({ opacity, transform }) => {
@@ -45,7 +42,7 @@ const IndexPage = () => {
             delay={400}
             to={{
               opacity: isVisible ? 1 : 0,
-              transform: isVisible ? "translateX(0)" : "translateX(-400px)",
+              transform: isVisible ? "translateX(0)" : "translateX(-200px)",
             }}
           >
             {({ opacity, transform }) => {

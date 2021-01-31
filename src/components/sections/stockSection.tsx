@@ -1,5 +1,4 @@
 import React from "react"
-import { useStaticQuery, graphql, Link } from "gatsby"
 import { color } from "../../components/styles"
 import Section, { SectionProps } from "./section"
 
@@ -8,7 +7,7 @@ const gifSrc = require("../../images/gifs/stockCapture.gif")
 
 const stockData: SectionProps = {
   id: "stocks",
-  background: color.silver,
+  background: color.gradient3Rev,
   title: "Stock Portfolio",
   description: "A full stack stock portfolio application using IEX cloud api",
   moreLink: "/projects/stock-portfolio",
@@ -20,7 +19,6 @@ const stockData: SectionProps = {
 
 const StockSection = ({ breakpoints }) => {
   const { md } = breakpoints
-  // const md = false
   return (
     <Section {...stockData} direction={md ? "column" : "row"} showMobile={md} />
   )

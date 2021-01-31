@@ -1,12 +1,9 @@
 import React from "react"
-import Layout from "../../components/layout"
-import SEO from "../../components/seo"
-import SectionWrapper from "../../components/sections/sectionWrapper"
-import SlideViewer, { makeSlides } from "../../components/slideViewer"
+// import SEO from "../../components/seo"
+import { makeSlides } from "../../components/slideViewer"
 import chromaSlides from "../../components/chromaSlides"
-import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
-import Back from "../../components/backButton"
+// import { useStaticQuery, graphql } from "gatsby"
+// import Img from "gatsby-image"
 import ProjectDetails, {
   ProjectDetailsProps,
 } from "../../components/projectDetails"
@@ -37,6 +34,18 @@ const chromaProjectData: ProjectDetailsProps = {
   ],
   challengDescription:
     "One fun challenge that I faced was building a component system that is responsive, performant, and compatible across both web and native platforms (such as a product card that is shared between the app and the admin dashboard). This made me consider the components I was building on an even higher level of abstraction, and more aware of the structure of the file system of the monorepo (ensuring a unidirectional flow of dependencies amongst component abstractions, for instance).",
+  links: [
+    {
+      message: "check it out on the",
+      linkText: "app store",
+      link: "https://apps.apple.com/us/app/chroma-signet/id1510822603",
+    },
+    {
+      message: ", and the",
+      linkText: "marketing site",
+      link: "https://chromasignet.com/",
+    },
+  ],
 }
 
 const ChromaProjectPage = () => {

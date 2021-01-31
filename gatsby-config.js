@@ -1,5 +1,13 @@
 const { author, siteTitle, siteDescription } = require("./config")
 
+const myCustomQueries = {
+  xs: "(max-width: 414px)",
+  sm: "(max-width: 720px)",
+  md: "(max-width: 1024px)",
+  l: "(max-width: 1536px)",
+  portrait: "(orientation: portrait)",
+}
+
 module.exports = {
   siteMetadata: {
     title: siteTitle,
@@ -15,11 +23,16 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    {
+      resolve: "gatsby-plugin-breakpoints",
+      options: {
+        queries: myCustomQueries,
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-smoothscroll`,
-    `gatsby-plugin-breakpoints`,
     // `gatsby-plugin-fontawesome-css`,
     {
       resolve: `gatsby-plugin-google-fonts`,

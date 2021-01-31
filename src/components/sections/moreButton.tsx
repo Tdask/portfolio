@@ -1,15 +1,12 @@
 import React from "react"
 import { Link } from "gatsby"
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-// import { FaArrowRight } from "react-icons/fa"
 import { FiArrowRight } from "react-icons/fi"
-// import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
 
 type MoreButtonProps = {
   link: string
 }
 
-const MoreButton = ({ link }) => {
+const MoreButton = ({ link }: MoreButtonProps) => {
   return (
     <Link
       to={link}
@@ -19,9 +16,10 @@ const MoreButton = ({ link }) => {
         color: "#000000CC",
       }}
     >
-      more&nbsp;
-      {/* <FontAwesomeIcon icon="arrow-right" /> */}
-      <FiArrowRight />
+      <div style={{ display: "flex", alignItems: "center" }}>
+        more&nbsp;
+        <FiArrowRight />
+      </div>
     </Link>
   )
 }

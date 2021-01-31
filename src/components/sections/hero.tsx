@@ -7,6 +7,7 @@ import Image from "../image"
 import BackgroundImage from "../backgroundImage"
 import SectionWrapper, { HeroSectionWrapper } from "./sectionWrapper"
 import Scroll from "../scroll"
+import { fontSizes, getCurrentSize } from "../helpers"
 // import { color } from "../styles/color"
 
 // const StyledBackground = styled.div`
@@ -104,31 +105,6 @@ const useTextLighten = (ref, toggle) => {
   return spring
 }
 
-const getCurrentSize = breakpoints => {
-  const { xs, sm, md, l } = breakpoints
-  if (!l) {
-    return "xl"
-  } else if (l && !md) {
-    return "l"
-  } else if (md && !sm) {
-    return "md"
-  } else {
-    if (sm && !xs) {
-      return "sm"
-    } else if (xs) {
-      return "xs"
-    }
-  }
-}
-
-const fontSizes = {
-  xl: 60,
-  l: 60,
-  md: 50,
-  sm: 35,
-  xs: 30,
-}
-
 const Hero = ({ breakpoints }) => {
   // const breakpoints = useBreakpoint()
   const currSize = getCurrentSize(breakpoints)
@@ -143,7 +119,6 @@ const Hero = ({ breakpoints }) => {
   const nameRef = useRef()
   const backgroundRef = useRef()
   useEffect(() => {
-    console.log("mounted", titleRef)
     setRerun(true)
   }, [])
   const useFinalSlideInFromLeft = (ref, setToggle) => {
@@ -195,7 +170,6 @@ const Hero = ({ breakpoints }) => {
   ])
   // useChain([titleRef, textRef, nameRef, text2Ref, arrowRef])
 
-  console.log("toggler", toggle, "titleRef check", titleRef)
   return (
     <>
       <HeroSectionWrapper textAlign="left" direction="column">
@@ -215,6 +189,7 @@ const Hero = ({ breakpoints }) => {
               fontSize: fontSize,
               display: "flex",
               marginBottom: 0,
+              flexWrap: "nowrap",
               ...text1LightenAnimation,
             }}
           >
