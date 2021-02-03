@@ -65,7 +65,13 @@ const IndexPage = () => {
               // transform: isVisible ? "translateX(0)" : "translateX(200px)",
             }}
           >
-            {({ opacity, transform }) => {
+            {({
+              opacity,
+              transform,
+            }: {
+              opacity?: number
+              transform?: string
+            }) => {
               return (
                 <div style={{ opacity, transform }}>
                   <MelodySection breakpoints={breakpoints} />

@@ -16,6 +16,8 @@ const StyledHeader = styled.header`
   //   hsla(216, 41%, 79%, 1) 100%
   // );
   background: ${color.xiketic};
+  // background-image: url(https://pbs.twimg.com/media/Es5iQO0W4AAbGeU?format=png&name=large);
+  // background-position: right;
 `
 
 const Header = ({ siteTitle }) => (
@@ -24,7 +26,7 @@ const Header = ({ siteTitle }) => (
       style={{
         // margin: `5 auto`,
         // maxWidth: 960,
-        padding: `0.7rem 3.0875rem`,
+        padding: `1rem 3.0875rem`,
         display: "flex",
         flex: 1,
         justifyContent: "space-between",

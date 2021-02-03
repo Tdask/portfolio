@@ -20,7 +20,7 @@ const BackgroundImage = ({ ...props }) => {
     <>
       {data?.backgroundImage?.childImageSharp?.fluid ? (
         <Img
-          // style={{ flex: 1 }}
+          style={{ objectFit: "fit" }}
           fluid={data.backgroundImage.childImageSharp.fluid}
           {...props}
         />

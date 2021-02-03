@@ -22,34 +22,34 @@ const ContactPage = () => {
   return (
     <Layout>
       {/* <SectionWrapper direction="column"> */}
-      <div
+      {/* <div
         style={{
-          // background: "teal",
+          background: "teal",
           display: "flex",
           flexDirection: "column",
           flex: 0.8,
         }}
-      >
-        <SEO title="Contact" />
-        <h1 style={{ textAlign: "center" }}>Get in touch</h1>
-        <StyledIconContainer>
-          {socialIcons.map(icon => (
-            <a
-              href={icon.link}
-              key={icon.link}
-              target="__blank"
-              style={{ color: "black" }}
-            >
-              <icon.icon size={32} />
-            </a>
-          ))}
-        </StyledIconContainer>
+      > */}
+      <SEO title="Contact" />
+      <h1 style={{ textAlign: "center" }}>Get in touch</h1>
+      <StyledIconContainer>
+        {socialIcons.map(icon => (
+          <a
+            href={icon.link}
+            key={icon.link}
+            target="__blank"
+            style={{ color: "black" }}
+          >
+            <icon.icon size={32} />
+          </a>
+        ))}
+      </StyledIconContainer>
 
-        <EmailForm currSize={currSize} />
-        {/* <EmailInput /> */}
-        {/* <Link to="/">Go back to the homepage</Link> */}
-        {/* </SectionWrapper> */}
-      </div>
+      <EmailForm currSize={currSize} breakpoints={breakpoints} />
+      {/* <EmailInput /> */}
+      {/* <Link to="/">Go back to the homepage</Link> */}
+      {/* </SectionWrapper> */}
+      {/* </div> */}
     </Layout>
   )
 }

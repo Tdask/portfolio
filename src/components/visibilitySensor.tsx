@@ -5,6 +5,7 @@ import VSensor from "react-visibility-sensor"
 type VisibilitySensorProps = {
   once: boolean
   children: (boolean) => any
+  partialVisibility?: boolean
 }
 
 const VisibilitySensor = ({

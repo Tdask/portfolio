@@ -1,10 +1,3 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.com/docs/use-static-query/
- */
-
 import React, { createContext, useContext } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
@@ -22,7 +15,7 @@ import "@fontsource/press-start-2p"
 const zenSrc = require("../images/zenAnsi.png")
 
 const StyledLayoutDiv = styled.div`
-  padding: 1rem 1.0875rem 1.45rem;
+  padding: 3rem 1.0875rem 1.45rem;
   display: flex;
   flex-direction: column;
   align-items: center;

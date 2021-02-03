@@ -4,7 +4,8 @@ import { useSpring, animated, useChain } from "react-spring"
 import { useBreakpoint } from "gatsby-plugin-breakpoints"
 import { color } from "../styles"
 import Image from "../image"
-import BackgroundImage from "../backgroundImage"
+import MyBackgroundImage from "../backgroundImage"
+
 import SectionWrapper, { HeroSectionWrapper } from "./sectionWrapper"
 import Scroll from "../scroll"
 import { fontSizes, getCurrentSize } from "../helpers"
@@ -106,7 +107,6 @@ const useTextLighten = (ref, toggle) => {
 }
 
 const Hero = ({ breakpoints }) => {
-  // const breakpoints = useBreakpoint()
   const currSize = getCurrentSize(breakpoints)
   const fontSize = fontSizes[currSize]
   const [toggle, setToggle] = useState(false)
@@ -124,7 +124,7 @@ const Hero = ({ breakpoints }) => {
   const useFinalSlideInFromLeft = (ref, setToggle) => {
     const spring = useSpring({
       from: {
-        transform: "translateX(-600px)",
+        transform: "translateX(-400px)",
         opacity: 0,
       },
       to: {
@@ -218,14 +218,15 @@ const Hero = ({ breakpoints }) => {
           {/* <Image path="rooftop-polaroid.png" /> */}
         </div>
         <animated.div style={{ ...imageFadeInStyle, zIndex: -2 }}>
-          <BackgroundImage
+          <MyBackgroundImage
             style={{
               position: "absolute",
               top: -170,
               left: 0,
               width: "100%",
               height: "auto",
-              minWidth: 950,
+              minHeight: 800,
+              // minWidth: 950,
               // opacity: 0,
               // zIndex: -2,
             }}
