@@ -1,7 +1,6 @@
 import React from "react"
 import { useBreakpoint } from "gatsby-plugin-breakpoints"
 import VisibilitySensor from "../components/visibilitySensor"
-// import { useSpring, animated, useChain } from "react-spring"
 import { Spring } from "react-spring/renderprops"
 import Hero from "../components/sections/hero"
 import TokenTaxSection from "../components/sections/tokenTaxSection"

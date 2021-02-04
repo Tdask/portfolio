@@ -21,15 +21,6 @@ const ContactPage = () => {
   const currSize = getCurrentSize(breakpoints)
   return (
     <Layout>
-      {/* <SectionWrapper direction="column"> */}
-      {/* <div
-        style={{
-          background: "teal",
-          display: "flex",
-          flexDirection: "column",
-          flex: 0.8,
-        }}
-      > */}
       <SEO title="Contact" />
       <h1 style={{ textAlign: "center" }}>Get in touch</h1>
       <StyledIconContainer>
@@ -46,10 +37,6 @@ const ContactPage = () => {
       </StyledIconContainer>
 
       <EmailForm currSize={currSize} breakpoints={breakpoints} />
-      {/* <EmailInput /> */}
-      {/* <Link to="/">Go back to the homepage</Link> */}
-      {/* </SectionWrapper> */}
-      {/* </div> */}
     </Layout>
   )
 }

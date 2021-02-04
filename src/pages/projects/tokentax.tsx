@@ -19,7 +19,7 @@ const technologies = [
   "Algolia",
   "React-Table",
 ]
-
+//TODO put into markdown file
 const tokenTaxProjectData = {
   technologies,
   slides,

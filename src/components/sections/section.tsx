@@ -1,4 +1,5 @@
 import React, { ReactNode } from "react"
+import styled from "styled-components"
 import SectionWrapper from "./sectionWrapper"
 import MoreButton from "./moreButton"
 import GifPlayer, { GifPlayerProps } from "../gifPlayer"

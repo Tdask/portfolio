@@ -1,5 +1,4 @@
 import React, { useState } from "react"
-import PropTypes from "prop-types"
 import VSensor from "react-visibility-sensor"
 
 type VisibilitySensorProps = {
@@ -11,14 +10,14 @@ type VisibilitySensorProps = {
 const VisibilitySensor = ({
   once,
   children,
-  ...theRest
+  ...props
 }: VisibilitySensorProps) => {
   const [active, setActive] = useState(true)
   return (
     <VSensor
       active={active}
       onChange={isVisible => once && isVisible && setActive(false)}
-      {...theRest}
+      {...props}
     >
       {({ isVisible }) => children({ isVisible })}
     </VSensor>

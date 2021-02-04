@@ -1,16 +1,14 @@
 import React, { useState, useCallback } from "react"
-import styled from "styled-components"
 import { FiChevronRight, FiChevronLeft } from "react-icons/fi"
 import { useTransition, animated } from "react-spring"
 import { getCurrentSize } from "../components/helpers"
 
 const arrowStyle = {
   position: "absolute",
-  left: 0,
   top: "50%",
   zIndex: 3,
   cursor: "pointer",
-}
+} as const
 
 export const makeSlides = slides => {
   const formattedSlides = slides.map(Slide => {
@@ -55,8 +53,6 @@ const SlideViewer = ({ slides, breakpoints, ...props }) => {
       style={{
         position: "relative",
         flex: 1,
-        // width: breakpoints.sm ? 500 : 600,
-        // height: breakpoints.sm ? 333 : 400,
         width: width,
         height: height,
         flexWrap: "nowrap",
@@ -71,11 +67,8 @@ const SlideViewer = ({ slides, breakpoints, ...props }) => {
           onClick()
         }}
         style={{
-          position: "absolute",
+          ...arrowStyle,
           right: 0,
-          top: "50%",
-          zIndex: 3,
-          cursor: "pointer",
         }}
       >
         <FiChevronRight size={55} style={{ opacity: 0.6 }} />
@@ -86,11 +79,8 @@ const SlideViewer = ({ slides, breakpoints, ...props }) => {
           onClick()
         }}
         style={{
-          position: "absolute",
+          ...arrowStyle,
           left: 0,
-          top: "50%",
-          zIndex: 3,
-          cursor: "pointer",
         }}
       >
         <FiChevronLeft size={55} style={{ opacity: 0.6 }} />

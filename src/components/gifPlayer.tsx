@@ -1,8 +1,5 @@
-import React, { useState, useEffect, CSSProperties } from "react"
-import { Helmet } from "react-helmet"
-import { useSpring, animated } from "react-spring"
+import React, { useState, CSSProperties } from "react"
 import styled, { keyframes, css } from "styled-components"
-// import TokenTaxGif from "../images/gifs/TTcapture.gif"
 
 const rotateAnimation = keyframes`
   from { transform: rotate(0deg); }

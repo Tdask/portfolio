@@ -68,16 +68,15 @@ const MelodyPage = () => {
             </p> */}
             <ol>
               <li>
-                {" "}
                 press 'Play' and toggle some notes to make a little starter
                 melody
               </li>
               <li>
                 once you're happy with what you've got press 'build melody' to
-                hear and see how the neural network progresses it{" "}
+                hear and see how the neural network progresses it
               </li>
               <li>
-                keep pressing 'Build Melody' to hear it grow and grow.{" "}
+                keep pressing 'Build Melody' to hear it grow and grow.
                 <p style={{ fontStyle: "italic" }}>
                   (tip: The 'heat' index controls how far away from the original
                   seed melody it will deviate, eg. the higher the heat number,

@@ -1,9 +1,6 @@
 import React, { useEffect, useRef, useState } from "react"
-import styled from "styled-components"
 import { useSpring, animated, useChain } from "react-spring"
-import { useBreakpoint } from "gatsby-plugin-breakpoints"
 import { color } from "../styles"
-import Image from "../image"
 import MyBackgroundImage from "../backgroundImage"
 
 import SectionWrapper, { HeroSectionWrapper } from "./sectionWrapper"

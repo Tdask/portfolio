@@ -1,12 +1,9 @@
-import React, { createContext, useContext } from "react"
+import React, { createContext, ReactNode, useContext } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
 import styled from "styled-components"
-import { color } from "./styles/color"
 import Header from "./header"
 import "./layout.css"
-// import "./assets/css/fonts.css"
 import "@fontsource/cousine"
 import "@fontsource/ubuntu-mono"
 import "@fontsource/open-sans"
@@ -21,10 +18,12 @@ const StyledLayoutDiv = styled.div`
   align-items: center;
   flex: 1;
   overflow: hidden;
-  // background-image: url(https://pbs.twimg.com/media/Es5iQO0W4AAbGeU?format=png&name=large);
 `
+type LayoutProps = {
+  children: ReactNode
+}
 
-const Layout = ({ children }) => {
+const Layout = ({ children }: LayoutProps) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -37,11 +36,6 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      {/* {data.zenImage.childImageSharp.fixed ? (
-        <Img fixed={data.zenImage.childImageSharp.fixed} />
-      ) : (
-        "no data"
-      )} */}
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <StyledLayoutDiv>
         <main>
@@ -56,7 +50,6 @@ const Layout = ({ children }) => {
             © {new Date().getFullYear()} Logan Takahashi
           </footer>
         </main>
-        {/* </div> */}
       </StyledLayoutDiv>
     </>
   )

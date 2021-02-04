@@ -10,29 +10,26 @@ const activeStyle = {
 }
 
 const StyledHeader = styled.header`
-  // background: linear-gradient(
-  //   90deg,
-  //   hsla(186, 33%, 94%, 1) 0%,
-  //   hsla(216, 41%, 79%, 1) 100%
-  // );
   background: ${color.xiketic};
   // background-image: url(https://pbs.twimg.com/media/Es5iQO0W4AAbGeU?format=png&name=large);
-  // background-position: right;
+`
+const StyledLinksContainer = styled.div`
+  padding: 1rem 3.0875rem;
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  align-items: center;
+`
+
+const StyledPageLinks = styled.div`
+  display: flex;
+  justify-content: space-around;
+  flex: 1;
 `
 
 const Header = ({ siteTitle }) => (
   <StyledHeader>
-    <div
-      style={{
-        // margin: `5 auto`,
-        // maxWidth: 960,
-        padding: `1rem 3.0875rem`,
-        display: "flex",
-        flex: 1,
-        justifyContent: "space-between",
-        alignItems: "center",
-      }}
-    >
+    <StyledLinksContainer>
       <h3 style={{ margin: 0, flex: 4 }}>
         <Link
           to="/"
@@ -45,21 +42,12 @@ const Header = ({ siteTitle }) => (
           {siteTitle}
         </Link>
       </h3>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-around",
-          flex: 1,
-          // background: "green",
-        }}
-      >
+      <StyledPageLinks>
         {navLinks.menu.map((item, i) => {
           return (
             <h3
               key={item.name}
               style={{
-                color: color.mango,
-                textDecoration: `none`,
                 marginBottom: 0,
               }}
             >
@@ -77,8 +65,8 @@ const Header = ({ siteTitle }) => (
             </h3>
           )
         })}
-      </div>
-    </div>
+      </StyledPageLinks>
+    </StyledLinksContainer>
   </StyledHeader>
 )
 

@@ -1,9 +1,6 @@
 import React from "react"
-// import SEO from "../../components/seo"
 import { makeSlides } from "../../components/slideViewer"
 import chromaSlides from "../../components/chromaSlides"
-// import { useStaticQuery, graphql } from "gatsby"
-// import Img from "gatsby-image"
 import ProjectDetails, {
   ProjectDetailsProps,
 } from "../../components/projectDetails"
