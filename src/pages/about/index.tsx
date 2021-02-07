@@ -33,7 +33,7 @@ const AboutPage = () => {
             processing and audio manipulation, production, and composition. My
             first experiences with coding were for creative projects including
             installations using Max/MSP/Jitter, designing circuits and programs
-            from arduinos, and hacking video codecs.
+            for arduinos, and hacking video codecs.
           </p>
           <p>
             I have released music on labels including{" "}
