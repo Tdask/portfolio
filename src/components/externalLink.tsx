@@ -2,13 +2,12 @@ import React from "react"
 import { FiExternalLink } from "react-icons/fi"
 
 export type LinkProps = {
-  message: string
-  linkText: string
-  link: string
+  message: string,
+  linkText: string,
+  link: string,
 }
 
 const ExternalLink = ({ message, link, linkText }) => (
-  <>
     <div style={{ display: "flex", alignItems: "center" }}>
       {message}&nbsp;{" "}
       <a
@@ -23,7 +22,6 @@ const ExternalLink = ({ message, link, linkText }) => (
         {linkText}&nbsp; <FiExternalLink />{" "}
       </a>
     </div>
-  </>
 )
 
 export default ExternalLink

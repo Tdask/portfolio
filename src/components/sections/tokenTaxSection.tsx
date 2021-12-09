@@ -24,7 +24,7 @@ const TokenTaxSection = ({ breakpoints }) => {
   return (
     <Section
       {...tokenTaxData}
-      direction={md ? "column" : "row"}
+      direction={md ? "column" : "row-reverse"}
       showMobile={md}
     />
   )

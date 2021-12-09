@@ -8,20 +8,21 @@ const BackWrapper = styled.div`
     transform: scale(1.2);
   }
   transition: all 200ms;
+  cursor: pointer;
+  margin-top: ${props => props.marginTop};
 `
 
 const Back = () => {
   return (
-    <BackWrapper>
-      <FiArrowLeft
-        size={50}
-        style={{ cursor: "pointer" }}
-        onClick={
-          typeof history !== "undefined"
-            ? () => history.go(-1)
-            : () => console.log("no history")
-        }
-      />
+    <BackWrapper
+    marginTop={'45px'}
+    onClick={
+      typeof history !== "undefined"
+        ? () => history.go(-1)
+        : () => console.log("no history")
+    }
+    >
+      <FiArrowLeft size={50} />
       <p style={{ fontSize: 12 }}>back to portfolio</p>
     </BackWrapper>
   )

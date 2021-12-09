@@ -23,7 +23,7 @@ const ChromaSection = ({ breakpoints }) => {
   return (
     <Section
       {...chromaData}
-      direction={md ? "column" : "row-reverse"}
+      direction={md ? "column" : "row"}
       showMobile={md}
     />
   )
