@@ -1,12 +1,20 @@
-import React from "react"
-import { useBreakpoint } from "gatsby-plugin-breakpoints"
+import React, {useState, useEffect} from "react"
 import Layout from "../../components/layout"
 import Iframe from "react-iframe"
 import Back from "../../components/backButton"
 import ExternalLink from "../../components/externalLink"
 import { SectionWrapper } from "../../components/sections"
 const InfinityPianoPage = () => {
-
+  const [iFrameDimensions, setIFrameDimensions] = useState({width: 0, height: 0})
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setIFrameDimensions({
+        width: window.innerWidth * 0.9,
+        height: window.innerHeight
+      })
+    }
+  },[])
+  const {width, height} = iFrameDimensions
   return (
     <Layout>
       <div
@@ -14,7 +22,7 @@ const InfinityPianoPage = () => {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          maxWidth: window?.innerWidth * 0.9,
+          maxWidth: width,
         }}
       >
         <h2>Infinity Piano</h2>
@@ -25,8 +33,8 @@ const InfinityPianoPage = () => {
         <Iframe
           onLoad={() => console.log("loaded!")}
           url="https://infinity-piano.netlify.app/"
-          width={window?.innerWidth * 0.9}
-          height={window?.innerHeight}
+          width={width}
+          height={height}
           id="infinityPiano"
         />
         <ExternalLink
