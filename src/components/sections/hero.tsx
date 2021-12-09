@@ -241,7 +241,7 @@ const Hero = ({ breakpoints }) => {
             alignItems: "center",
           }}
         >
-          <Scroll id="chroma" />
+          <Scroll id="infinityPiano" />
         </animated.div>
       </HeroSectionWrapper>
     </>
